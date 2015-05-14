@@ -3,8 +3,6 @@
 ;; For various things like personal setting, key bindings, mode-hooks, and various hacks. 	  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Personal Settings ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -20,6 +18,12 @@
 (scroll-bar-mode -1)
 (transient-mark-mode 0)
 
+(setq make-backup-files nil)
+
+;Disables Start-up Junk
+(setq inhibit-startup-meassge t)
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message nil)
 
 ;; Changes "Yes or No" to accept "y" or "n" 
 (defalias 'yes-or-no-p 'y-or-n-p)

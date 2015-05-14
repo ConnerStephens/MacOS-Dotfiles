@@ -12,7 +12,7 @@
 
 (defun find-and-display-file (FILENAME)
   "this finds file and displays it in other window without selecting it"
-  (interactive "FFind and display file: ")
+  (interactive "Find and display file: ")
   (let ((buf (find-file-noselect FILENAME)))
     (better-display-buffer buf)))
 
