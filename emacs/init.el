@@ -1,7 +1,11 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ~/.emacs.d/init.el						        			  ;;
-;; For various things like personal setting, key bindings, mode-hooks, and various hacks. 	  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ~/.emacs.d/init.		     ;;
+;; For various things like:	     ;;
+;; - Personal settings,		     ;;
+;; - Mode-hooks,		     ;;
+;; - And various hacks. 	     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Personal Settings ;;
@@ -18,9 +22,11 @@
 (scroll-bar-mode -1)
 (transient-mark-mode 0)
 
+;; Turns off auto save and back-ups
+(setq auto-save-default nil) 
 (setq make-backup-files nil)
 
-;Disables Start-up Junk
+;;Disables Start-up Junk
 (setq inhibit-startup-meassge t)
 (setq inhibit-splash-screen t)
 (setq initial-scratch-message nil)
@@ -32,6 +38,11 @@
 
 (setq-default ispell-program-name "aspell")
 (add-to-list 'exec-path "/usr/local/bin")
+
+;; Pull all auto saves in their own directory
+;;(setq save-place-file "~/.emacs.d/saved-places")
+;;(require 'saveplace)
+;;(autoload 'toggle-save-place "saveplace" )
 
 
 ;;;;;;;;;;;;;;;;
@@ -53,8 +64,6 @@
 
 
 ;; LaTeX to Pdf 
-
-
 (setq latex-run-command "pdflatex")
 (defvar tex-last-action nil)
 (defadvice tex-file (after choose-output activate)
@@ -79,4 +88,5 @@
           '(lambda ()
              (local-set-key "\C-c\C-v" 'fake-dvi-view)))
 
+;; Set path for my configuration
 (setenv "PATH" "/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/local/texlive/2014/bin/universal-darwin:")
