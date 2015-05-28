@@ -218,30 +218,6 @@ when called with a prefix argument."
     ad-do-it
     (raise-frame f)))
 
-;; Conner-Mode Key Prefs!
-
-(define-prefix-command 'conner-prefix 'conner-prefix-map)
-(define-key global-map "\M-o" 'conner-prefix)
-(define-key conner-prefix-map "\c" 'compile)
-(define-key conner-prefix-map "s" 'shell-current-directory)
-(define-key conner-prefix-map "l" 'ace-jump-mode)
-(define-key conner-prefix-map "j" 'ace-jump-line-mode)
-
-;Window Management
-
-(global-set-key (kbd "M-`") 'other-frame)
-
-
-(define-key conner-prefix-map "b" 'switch-to-buffer-other-frame)
-(define-key conner-prefix-map "\M-b" 'view-buffer-other-frame)
-(define-key conner-prefix-map "f" 'find-file-other-frame)
-(define-key conner-prefix-map "r" 'find-file-read-only-other-frame)
-(define-key conner-prefix-map "d" 'delete-frame)
-(define-key conner-prefix-map "\M-d" 'delete-other-frames)
-
-(define-key conner-prefix-map "p" 'flip-windows)
-
-
 ;; Kills Compile buffer after 1 sec if no errors
 (setq compilation-finish-function
   (lambda (buf str)
