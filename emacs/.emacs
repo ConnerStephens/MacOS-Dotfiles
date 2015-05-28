@@ -5,7 +5,8 @@
 (add-hook 'after-init-hook
 	  '(lambda ()
 	     (load "~/.emacs.d/init.el")
-	     (load "~/.emacs.d/WindowManager.el")))
+	     (load "~/.emacs.d/WindowManager.el")
+	     (load "~/.emacs.d/key-mappings.el")))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
