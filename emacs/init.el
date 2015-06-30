@@ -49,6 +49,7 @@
 ;; Mode Hooks ;;
 ;;;;;;;;;;;;;;;;
 
+
 ;; org-mode-hookes
 (require 'org)
 (add-hook 'org-mode-hook (lambda ()

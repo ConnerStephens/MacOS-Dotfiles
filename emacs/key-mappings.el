@@ -20,6 +20,7 @@
 (define-key conner-prefix-map "k" 'kill-other-buffer)
 (define-key conner-prefix-map "l" 'ace-jump-mode)
 (define-key conner-prefix-map "p" 'flip-windows)
+(define-key conner-prefix-map "q" 'mkdir)
 (define-key conner-prefix-map "r" 'find-file-read-only-other-frame)
 (define-key conner-prefix-map "s" 'shell-current-directory)
 (define-key conner-prefix-map "t" 'join-line)
@@ -30,9 +31,10 @@
 
 ;; Meta + Meta
 (define-key conner-prefix-map "\M-b" 'view-buffer-other-frame)
-(define-key conner-prefix-map "\M-c" 'compile-again)
+;;(define-key conner-prefix-map "\M-c" 'compile-again)
 (define-key conner-prefix-map "\M-d" 'delete-other-frames)
 (define-key conner-prefix-map "\M-k" 'kill-current-buffer)
+(define-key conner-prefix-map "\M-l" 'delete-minibuffer-contents)
 (define-key conner-prefix-map "\M-x" 'uncomment-region)
 
 

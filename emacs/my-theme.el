@@ -20,7 +20,7 @@
       (my-theme-orange      "#E95D3C")
       (my-theme-orange+1    "#EF907E")
       (my-theme-orange-1    "#AC4123")
-
+xrain
       (my-theme-yellow+1    "#FFFF00")
       (my-theme-yellow         "#FB0")
       (my-theme-yellow-1       "#B90")
@@ -68,18 +68,17 @@
    `(minibuffer-prompt ((t (:foreground ,my-theme-cyan))))
  
    ;; font lock
+   `(font-lock-builtin-face ((t (:foreground ,my-theme-cyan))))
    `(font-lock-comment-face ((t (:foreground ,my-theme-blue+2))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,my-theme-blue+2))))
    `(font-lock-constant-face ((t (:foreground ,my-theme-cyan))))
-   `(font-lock-builtin-face ((t (:foreground ,my-theme-cyan))))
+   `(font-lock-doc-string-face ((t (:foreground ,my-theme-fg-hi))))
    `(font-lock-function-name-face ((t (:foreground ,my-theme-red))))
-   `(font-lock-variable-name-face ((t (:foreground ,my-theme-purple))))
    `(font-lock-keyword-face ((t (:foreground ,my-theme-cyan))))
    `(font-lock-string-face ((t (:foreground ,my-theme-yellow+1))))
-   `(font-lock-doc-string-face ((t (:foreground ,my-theme-fg-hi))))
    `(font-lock-type-face ((t (:foreground ,my-theme-yellow+1))))
+   `(font-lock-variable-name-face ((t (:foreground ,my-theme-purple))))   
    `(font-lock-warning-face ((t (:foreground ,my-theme-red))))
-   
 
    ;; linenum mode
    `(linum ((t (:foreground ,my-theme-green+1 :background ,my-theme-grey-4))))
@@ -183,16 +182,43 @@
    `(eshell-ls-special ((t (:foreground ,my-theme-purple :weight bold))))
    `(eshell-ls-symlink ((t (:foreground ,my-theme-blue+1 :weight bold))))
 
-   ;;;;; ido-mode
+   ;;;;; erc
+   `(erc-action-face ((t (:inherit my-theme-green+1))))
+   `(erc-bold-face ((t (:weight bold))))
+   `(erc-current-nick-face ((t (:foreground ,my-theme-cyan :weight bold))))
+   `(erc-dangerous-host-face ((t (:inherit font-lock-warning-face))))
+   `(erc-default-face ((t (:foreground ,my-theme-purple))))
+   `(erc-direct-msg-face ((t (:inherit erc-default))))
+   `(erc-error-face ((t (:inherit font-lock-warning-face))))
+   `(erc-fool-face ((t (:inherit my-theme-purple))))
+   `(erc-highlight-face ((t (:inherit hover-highlight))))
+   `(erc-input-face ((t (:foreground ,my-theme-yellow+1))))
+   `(erc-keyword-face ((t (:foreground ,my-theme-purple :weight bold))))
+   `(erc-nick-default-face ((t (:foreground ,my-theme-yellow+1 :weight bold))))
+   `(erc-my-nick-face ((t (:foreground ,my-theme-cyan :weight bold))))
+   `(erc-nick-msg-face ((t (:inherit my-theme-cyan))))
+   `(erc-notice-face ((t (:foreground ,my-theme-green+1))))
+   `(erc-pal-face ((t (:foreground ,my-theme-orange :weight bold))))
+   `(erc-prompt-face ((t (:foreground ,my-theme-cyan :background ,my-theme-bg :weight bold))))
+   `(erc-timestamp-face ((t (:foreground ,my-theme-green+1))))
+   `(erc-underline-face ((t (:underline t))))
+
+   ;; ido-mode
    `(ido-first-match ((t (:foreground ,my-theme-yellow+1 :weight bold))))
    `(ido-only-match ((t (:foreground ,my-theme-green+1 :weight bold))))
    `(ido-subdir ((t (:foreground ,my-theme-purple))))
    `(ido-indicator ((t (:foreground ,my-theme-cyan :background ,my-theme-purple))))
    ))
 
-;Transparent Windows
+;; Transparent Windows
 (set-frame-parameter (selected-frame) 'alpha '(90 90))
 (add-to-list 'default-frame-alist '(alpha 90 90))
+
+;; Change Ansi Colors.
+(setq ansi-color-names-vector
+      ;; black, red, green, yellow, blue, purple, cyan, white
+      ["black" "#FF5050" "#4dffaa" "#FFFF00"
+       "#CB87FD" "#99aFfF" "#00ffff" "#ffffff"])
 
 (when load-file-name
   (add-to-list 'custom-theme-load-path
