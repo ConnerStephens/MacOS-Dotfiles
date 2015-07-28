@@ -17,7 +17,7 @@ local layouts = {}
 
 local mash = {"ctrl", "cmd"}
 local tmash = {"ctrl", "cmd", "shift"}
-local smash = {"ctrl", "alt"}
+local smash = {"cmd", "shift"}
 local amash = {"alt", "shift"}
 
 local function leftSlam()
