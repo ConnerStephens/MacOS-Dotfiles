@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;; ~/.emacs.d/init.		     ;;
 ;; For various things like:	     ;;
 ;; - Personal settings,		     ;;
@@ -22,6 +22,10 @@
 (scroll-bar-mode -1)
 (transient-mark-mode 0)
 
+;; Eshell stuff
+(setq comint-process-echoes t) ;; stops eshell from repeating commands 
+(ansi-color-for-comint-mode-on) ;; 
+
 ;; Turns off auto save and back-ups
 (setq auto-save-default nil) 
 (setq make-backup-files nil)
@@ -30,6 +34,27 @@
 (setq inhibit-startup-meassge t)
 (setq inhibit-splash-screen t)
 (setq initial-scratch-message nil)
+
+;; Easier Sudo Command 
+(defun sudo-find-file (file-name)
+  "Like find file, but opens the file as root."
+  (interactive "FSudo Find File: ")
+  (let ((tramp-file-name (concat "/sudo::" (expand-file-name file-name))))
+    (find-file tramp-file-name)))
+
+(defun make-compile()
+  (interactive)
+  (beginning-of-buffer)
+  (newline)
+  (previous-line)
+ 
+  (let ((compile-var (read-from-minibuffer "Enter compile-command: ")))
+    (insert  "-*- compile-command:\"" compile-var "\" -*-"))
+  (let (beg end)
+    (if (region-active-p)
+	(setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-region beg end)))
 
 ;; Changes "Yes or No" to accept "y" or "n" 
 (defalias 'yes-or-no-p 'y-or-n-p)
