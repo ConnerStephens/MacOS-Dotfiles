@@ -16,6 +16,7 @@
 (define-key conner-prefix-map "d" 'delete-frame)
 (define-key conner-prefix-map "e" 'eval-buffer)
 (define-key conner-prefix-map "f" 'find-file-other-frame)
+(define-key conner-prefix-map "g" 'backward-kill-line)
 (define-key conner-prefix-map "h" 'split-window-vertically)
 (define-key conner-prefix-map "i" 'indent-region)
 (define-key conner-prefix-map "j" 'ace-jump-line-mode)
@@ -37,8 +38,7 @@
 (define-key conner-prefix-map "\M-c" 'make-compile)
 (define-key conner-prefix-map "\M-d" 'delete-other-frames)
 (define-key conner-prefix-map "\M-k" 'kill-current-buffer)
-(define-key conner-prefix-map "\M-l" 'delete-minibuffer-contents)
 (define-key conner-prefix-map "\M-x" 'uncomment-region)
 
-
 ;; Meta + Ctrl
+(define-key conner-prefix-map "\C-l" 'delete-minibuffer-contents)

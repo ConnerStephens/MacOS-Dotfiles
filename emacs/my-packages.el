@@ -14,12 +14,16 @@
 (defvar required-packages
   '(
 ;;    smarter-compile
-    smex
-    exec-path-from-shell
-    org
+    
     ace-jump-mode
     ace-jump-buffer
+    exec-path-from-shell
+    lua-mode
     nasm-mode
+    nyan-mode
+    rainbow-mode 
+    org
+    smex
   ) "a list of packages to ensure are installed at launch.")
 
 ; method to check if all packages are installed
@@ -38,3 +42,17 @@
   (dolist (p required-packages)
     (when (not (package-installed-p p))
       (package-install p))))
+
+
+;Smex
+;(require 'smex)
+(autoload 'smex-mode "smex")
+(global-set-key (kbd "M-x") 'smex)
+
+;Nasm
+(autoload 'nasm-mode "nasm-mode")
+(add-to-list 'auto-mode-alist '("\\.\\(asm\\|s\\)$" . nasm-mode))
+
+
+;Nyan Cat!
+(nyan-mode 1)

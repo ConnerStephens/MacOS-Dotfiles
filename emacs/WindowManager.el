@@ -1,4 +1,6 @@
-;; BUFFER MANAGEMENT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ***** Buffer Mgmt. ***** ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq-default display-buffer-resuse-frames t)
 
@@ -238,10 +240,10 @@ when called with a prefix argument."
 	(if (> (x-display-pixel-width) 1280)
 	    (add-to-list 'default-frame-alist (cons 'width 80)))
 	(if (window-system)
-	    (set-frame-height (selected-frame) 60))
-	 ;;    (add-to-list 'default-frame-alist 
-         ;; (cons 'height (/ (- (x-display-pixel-height))
-         ;;                     (frame-char-height))))
+	    (set-frame-height (selected-frame) 52))
+	   ; (add-to-list 'default-frame-alist 
+;         (cons 'height (/ (- (x-display-pixel-height))
+ ;                            (frame-char-height))))
 	    )))
 
 (set-frame-size-according-to-resolution)

@@ -1,4 +1,3 @@
-
 ;; My theme for Emacs 24:
 
 (deftheme my-theme 
@@ -92,10 +91,10 @@
    `(font-lock-constant-face ((t (:foreground ,my-theme-yellow+1))))
    `(font-lock-doc-string-face ((t (:foreground ,my-theme-fg-hi))))
    `(font-lock-function-name-face ((t (:foreground ,my-theme-red))))
-   `(font-lock-keyword-face ((t (:foreground ,my-theme-yellow+1))))
-   `(font-lock-string-face ((t (:foreground ,my-theme-purple))))
+   `(font-lock-keyword-face ((t (:foreground ,my-theme-cyan))))
+   `(font-lock-string-face ((t (:foreground ,my-theme-yellow+1))))
    `(font-lock-type-face ((t (:foreground ,my-theme-yellow+1))))
-   `(font-lock-variable-name-face ((t (:foreground ,my-theme-cyan))))   
+   `(font-lock-variable-name-face ((t (:foreground ,my-theme-purple))))   
    `(font-lock-warning-face ((t (:foreground ,my-theme-red))))
 
   ;; linenum mode
@@ -185,40 +184,38 @@
    `(compilation-mode-line-run ((t (:foreground ,my-theme-yellow+1 :weight bold))))
    ;;; grep
    `(grep-error-face ((t (:foreground ,my-theme-red :weight bold :underline t))))
-
-   
    ;; eshell
    `(eshell-prompt ((t (:foreground ,my-theme-cyan :weight bold))))
    `(eshell-ls-archive ((t (:foreground ,my-theme-red :weight bold))))
-   `(eshell-ls-backup ((t (:inherit font-lock-comment-face))))
-   `(eshell-ls-clutter ((t (:inherit font-lock-comment-face))))
+   `(eshell-ls-backup ((t (:inherit font-lock-yellow+1))))
+   `(eshell-ls-clutter ((t (:inherit font-lock-yellow+1))))
    `(eshell-ls-directory ((t (:foreground ,my-theme-blue+1 :weight bold))))
    `(eshell-ls-executable ((t (:foreground ,my-theme-red :weight bold))))
    `(eshell-ls-unreadable ((t (:foreground ,my-theme-fg))))
    `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
    `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
-   `(eshell-ls-special ((t (:foreground ,my-theme-purple :weight bold))))
+   `(eshell-ls-special ((t (:foreground ,my-theme-yellow+1 :weight bold))))
    `(eshell-ls-symlink ((t (:foreground ,my-theme-blue+1 :weight bold))))
 
-   ;; ;;;;; erc
+   ;; erc
    `(erc-action-face ((t (:inherit my-theme-green+2))))
    `(erc-bold-face ((t (:weight bold))))
    `(erc-current-nick-face ((t (:foreground ,my-theme-cyan :weight bold))))
    `(erc-dangerous-host-face ((t (:inherit font-lock-warning-face))))
-   `(erc-default-face ((t (:foreground ,my-theme-fg))))
+   `(erc-default-face ((t (:foreground ,my-theme-purple))))
    `(erc-direct-msg-face ((t (:inherit erc-default))))
    `(erc-error-face ((t (:inherit font-lock-warning-face))))
    `(erc-fool-face ((t (:inherit my-theme-cyan+3))))
    `(erc-highlight-face ((t (:inherit hover-highlight))))
-   `(erc-input-face ((t (:foreground ,my-theme-fg))))
-   `(erc-keyword-face ((t (:foreground ,my-theme-grey-3 :weight bold))))
-   `(erc-nick-default-face ((t (:foreground ,my-theme-green :weight bold))))
+   `(erc-input-face ((t (:foreground ,my-theme-yellow+1))))
+   `(erc-keyword-face ((t (:foreground ,my-theme-red :weight bold))))
+   `(erc-nick-default-face ((t (:foreground ,my-theme-cyan :weight bold))))
    `(erc-my-nick-face ((t (:foreground ,my-theme-cyan :weight bold))))
    `(erc-nick-msg-face ((t (:inherit my-theme-cyan))))
-   `(erc-notice-face ((t (:foreground ,my-theme-yellow+1))))
+   `(erc-notice-face ((t (:foreground ,my-theme-grey+3))))
    `(erc-pal-face ((t (:foreground ,my-theme-orange :weight bold))))
    `(erc-prompt-face ((t (:foreground ,my-theme-cyan :background ,my-theme-bg :weight bold))))
-   `(erc-timestamp-face ((t (:foreground ,my-theme-yellow+1))))
+   `(erc-timestamp-face ((t (:foreground ,my-theme-grey+3))))
    `(erc-underline-face ((t (:underline t))))
 
    ;; ido-mode
