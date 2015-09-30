@@ -1,8 +1,7 @@
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; *******  ~/.emacs.d/init. ******* ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For various things like:          ;;
 ;; - Personal settings,	             ;;
 ;; - Mode-hooks,	             ;;
@@ -28,6 +27,9 @@
 ;; *****  Personal Settings ***** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Sets Default Window Size!
+(setq initial-frame-alist '((width . 86) (height . 55)))
+
 (ido-mode 1)
 (show-paren-mode 1)
 (tool-bar-mode -1)
@@ -52,10 +54,23 @@
 (setq inhibit-splash-screen t)
 (setq initial-scratch-message nil)
 
+;(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+
 ;; Changes "Yes or No" to accept "y" or "n" 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Changes ispell to aspell (After brew install of "aspell --with-lang-en") 
 
 ;; Set path for my configuration
-(setenv "PATH" "/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Library/TeX/texbin/")
+;; (setenv "PATH" "/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Library/TeX/texbin/")
+
+(setenv "PATH" (concat (getenv "HOME")
+		       "/bin:"
+		       "/usr/local/bin:"
+		       "/usr/sbin:"
+		       "/sbin:"
+		       "/usr/bin:"
+		       "/Library/TeX/texbin/:"
+                       "/opt/local/bin:"
+                       (getenv "PATH")))
+(setenv "LANG" "en_US.UTF-8")

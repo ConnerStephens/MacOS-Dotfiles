@@ -2,8 +2,6 @@
 ;; ***** Buffer Mgmt. ***** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq-default display-buffer-resuse-frames t)
-
  (defun better-display-buffer(arg)
    "a better display buffer"
   (interactive "B")
@@ -14,7 +12,7 @@
 
 (defun find-and-display-file (FILENAME)
   "this finds file and displays it in other window without selecting it"
-  (interactive "Find and display file: ")
+  (interactive "FFind and display file: ")
   (let ((buf (find-file-noselect FILENAME)))
     (better-display-buffer buf)))
 
@@ -39,7 +37,7 @@
 (defun kill-current-buffer ()
   (interactive)
   (if (buffer-modified-p)
-      (error "Can't kill current buffer, buffer modified.")
+      ;(error "Can't kill current buffer, buffer modified.")
     (kill-buffer (current-buffer))))
 
 
@@ -230,23 +228,6 @@ when called with a prefix argument."
            "1 sec" nil 'delete-windows-on
            (get-buffer-create "*compilation*"))
           (message "No Compilation Errors!")))))
-
-;; Default Frame Display Size 
-(defun set-frame-size-according-to-resolution ()
-  (interactive)
-  (if window-system
-      (progn
-
-	(if (> (x-display-pixel-width) 1280)
-	    (add-to-list 'default-frame-alist (cons 'width 80)))
-	(if (window-system)
-	    (set-frame-height (selected-frame) 52))
-	   ; (add-to-list 'default-frame-alist 
-;         (cons 'height (/ (- (x-display-pixel-height))
- ;                            (frame-char-height))))
-	    )))
-
-(set-frame-size-according-to-resolution)
 
 (defun jump-to-existing-buffer (bufname)
   "Jump to buffer BUFNAME.  If visible go there.  Otherwise make it visible

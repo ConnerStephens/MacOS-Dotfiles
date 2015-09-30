@@ -16,11 +16,12 @@
       (my-theme-grey-2         "#888")
       (my-theme-grey-3         "#444")
       (my-theme-grey-4      "#191910") ;"#363636")
+      (my-theme-grey-5      "#8e8e8e")
       
       (my-theme-red         "#FF5050") ;#f22c2c")
      
 
-      (my-theme-orange      "#E95D3C")
+      (my-theme-orange      "#FFC75F")
       (my-theme-orange+1    "#EF907E")
       (my-theme-orange-1    "#AC4123")
       (my-theme-yellow+1    "#FFFF7F")
@@ -55,6 +56,7 @@
       (my-theme-blue        "#37c4e1")
       (my-theme-blue+1      "#0080ff")
       (my-theme-blue+2      "#4dffaa") ;#0099FF")
+      (my-theme-blue+3      "#00ff80")
 
       (my-theme-magenta     "#99aFfF")
       (my-theme-purple      "#af88ec"))
@@ -184,6 +186,7 @@
    `(compilation-mode-line-run ((t (:foreground ,my-theme-yellow+1 :weight bold))))
    ;;; grep
    `(grep-error-face ((t (:foreground ,my-theme-red :weight bold :underline t))))
+
    ;; eshell
    `(eshell-prompt ((t (:foreground ,my-theme-cyan :weight bold))))
    `(eshell-ls-archive ((t (:foreground ,my-theme-red :weight bold))))
@@ -223,39 +226,33 @@
    `(ido-only-match ((t (:foreground ,my-theme-green :weight bold))))
    `(ido-subdir ((t (:foreground ,my-theme-grey+3))))
    `(ido-indicator ((t (:foreground ,my-theme-cyan :background ,my-theme-grey+3))))
+ ;; term
+   `(term ((t ( :foreground ,my-theme-cyan))))
 
-   ;;;;; term
    `(term-color-black ((t (:foreground ,my-theme-bg
                                        :background ,my-theme-bg))))
-   `(term-color-red ((t (:foreground ,my-theme-cyan
-                                       :background ,my-theme-cyan))))
-   `(term-color-green ((t (:foreground ,my-theme-yellow+1
-                                       :background ,my-theme-bg))))
+   `(term-color-red ((t (:foreground ,my-theme-purple
+                                       :background ,my-theme-purple))))
+   `(term-color-green ((t (:foreground ,my-theme-cyan+6
+                                       :background ,my-theme-cyan+6))))
    `(term-color-yellow ((t (:foreground ,my-theme-red
-                                       :background ,my-theme-bg))))
-   `(term-color-blue ((t (:foreground ,my-theme-cyan+6
-                                      :background ,my-theme-bg))))
+                                       :background ,my-theme-red))))
+   `(term-color-blue ((t (:foreground ,my-theme-yellow+1
+                                      :background ,my-theme-yellow+1))))
    `(term-color-magenta ((t (:foreground ,my-theme-purple
-                                         :background ,my-theme-bg))))
+                                         :background ,my-theme-purple))))
    `(term-color-cyan ((t (:foreground ,my-theme-grey+3
-                                       :background ,my-theme-bg))))
-   `(term-color-white ((t (:foreground ,my-theme-fg
-                                       :background ,my-theme-bg))))
-   '(term-default-fg-color ((t (:inherit my-theme-fg))))
-   '(term-default-bg-color ((t (:inherit term-color-black))))
-
+                                       :background ,my-theme-grey+3))))
+   `(term-color-white ((t (:foreground ,my-theme-fg-hi
+                                       :background ,my-theme-fg-hi)))) 
    ))
-
+;; Change Ansi Colors.
+   (setq ansi-color-names-vector
+	 ["#000000" "#FF5050" "#4dffaa" "#af88ec"
+	  "#FFFF7F" "#99aFfF" "#00ffff" "#ffffff"])
 ;; Transparent Windows
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
 (add-to-list 'default-frame-alist '(alpha 85 85))
-
-;; ;; Change Ansi Colors.
-;; (setq ansi-color-names-vector
-;;       ;; black, red, green, yellow, blue, purple, cyan, white
-;;       ["#000000" "#FF5050" "#4dffaa" "#FFFF00"
-;;        "#CB87FD" "#99aFfF" "#00ffff" "#ffffff"])
-
 (when load-file-name
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))

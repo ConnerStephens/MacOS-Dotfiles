@@ -12,8 +12,9 @@
 (add-hook 'shell-mode-hook 
 	  '(lambda ()
 	     (process-kill-without-query (get-buffer-process (current-buffer)))
-	     ;;(local-set-key (kbd "C-c SPC") 'ace-jump-mode)
-             (toggle-truncate-lines 0)))
+	     ;(ansi-color-for-comint-mode-on)
+             (toggle-truncate-lines 0))) 
+
 
 ;; Sets indents for Python
 (add-hook 'python-mode-hook

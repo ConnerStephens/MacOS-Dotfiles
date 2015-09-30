@@ -17,7 +17,7 @@ local layouts = {}
 
 local mash = {"ctrl", "cmd"}
 local tmash = {"ctrl", "cmd", "shift"}
-local smash = {"cmd", "shift"}
+local smash = {"cmd"}
 local amash = {"alt", "shift"}
 
 local function leftSlam()
@@ -27,7 +27,7 @@ local function leftSlam()
    local max = screen:frame()
 
    f.x = max.x + 5
-   f.y = max.y + 3
+   f.y = max.y 
    f.w = max.w / 2 - 10
    f.h = max.h - 10
    win:setFrame(f)
@@ -41,8 +41,8 @@ local function rightSlam()
    local screen = win:screen()
    local max = screen:frame()
 
-   f.x = max.x + (max.w / 2) + 3
-   f.y = max.y + 3
+   f.x = max.x + (max.w / 2) + 2
+   f.y = max.y 
    f.w = max.w / 2 - 10
    f.h = max.h - 10
    win:setFrame(f)
@@ -100,11 +100,6 @@ local function rightBottomSlam()
    f.w = max.w / 2 - 3
    f.h = max.h / 2 - 5
 
-   
-   f.x = (max.x / 2) + (max.w / 2) + 4 
-   f.y = max.y + (max.h / 2) 
-   f.w = max.w / 2 - 3
-   f.h = max.h / 2 - 5
    win:setFrame(f)
 end
 
@@ -190,26 +185,6 @@ hs.hotkey.bind(smash, 'down', function()
          hs.alert.show("No active window")
      end
  end)
- 
-
-
--- function toggle_application(_app)
---     local app = hs.appfinder.appFromName(_app)
---     if not app then
---         -- FIXME: This should really launch _app
---         return
---     end
---     local mainwin = app:mainWindow()
---     if mainwin then
---         if mainwin == hs.window.focusedWindow() then
---             mainwin:application():hide()
---         else
---             mainwin:application():activate(true)
---             mainwin:application():unhide()
---             mainwin:focus()
---         end
---     end
--- end
 
 
 -------------------
@@ -231,7 +206,7 @@ local function runTerminal()
       hs.applescript.applescript('tell application "Terminal" to activate')
       hs.application.launchOrFocus("Terminal")
       terminal = hs.appfinder.appFromName("Terminal")
-      hs.alert.show("launching terminal")
+      hs.alert.show("Summoning Terminal")
    end
 
    local win = terminal:focusedWindow()
@@ -261,7 +236,7 @@ function reloadConfig(files)
    end
 end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Welcome back: Captain. \n\nSTATUS: All Systems Are Online.")
+hs.alert.show("Welcome back, \nCAPTAIN. \n\n All Systems:\n ONLINE.")
 
 ------------------------
 -- -- Key Bindings -- --
@@ -274,6 +249,7 @@ hs.hotkey.bind(mash, "left", function() leftSlam() end)
 hs.hotkey.bind(mash, "right", function() rightSlam() end)
 hs.hotkey.bind(mash, "return", function() centerWindow() end)
 
+
 -- Tmash
 hs.hotkey.bind(tmash, "left", function() leftBottomSlam() end)
 hs.hotkey.bind(tmash, "up", function() leftTopSlam() end)
@@ -281,8 +257,10 @@ hs.hotkey.bind(tmash, "right", function() rightTopSlam() end)
 hs.hotkey.bind(tmash, "down", function() rightBottomSlam() end)
 hs.hotkey.bind(tmash, "return", function() centerfocused() end)
 
-
 -- Amash
+-- Launch Iterm2
+--hs.hotkey.bind(amash, "t", function() os.execute("/Applications/iTerm.app") end)
+
 hs.hotkey.bind(amash, "s", function() iTunesDisplay() end)
 hs.hotkey.bind(amash, "x", runTerminal)
 
