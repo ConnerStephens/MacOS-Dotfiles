@@ -26,7 +26,7 @@
 ;; Easier Tramp Command 
 (defun start-tramp ()
   (interactive)
-  (let ((tramp-conn (read-from-minibuffer "Enter tramp connection: "))) 
+  (let ((tramp-conn (read-from-minibuffer "Start tramp connection at: "))) 
     (find-alternate-file (concat "/ssh:" tramp-conn))))
 
 (defun make-compile()

@@ -54,15 +54,23 @@
 (setq inhibit-splash-screen t)
 (setq initial-scratch-message nil)
 
-;(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+;; Kills Compile buffer after 1 sec if no errors
+(setq compilation-finish-function
+  (lambda (buf str)
+    (if (null (string-match ".*exited abnormally.*" str))
+        ;;no errors, make the compilation window go away in a few seconds
+        (progn
+          (run-at-time
+           "1 sec" nil 'delete-windows-on
+           (get-buffer-create "*compilation*"))
+          (message "No Compilation Errors!")))))
 
 ;; Changes "Yes or No" to accept "y" or "n" 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Changes ispell to aspell (After brew install of "aspell --with-lang-en") 
-
 ;; Set path for my configuration
 ;; (setenv "PATH" "/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/Library/TeX/texbin/")
+(setenv "LANG" "en_US.UTF-8")
 
 (setenv "PATH" (concat (getenv "HOME")
 		       "/bin:"
@@ -73,4 +81,4 @@
 		       "/Library/TeX/texbin/:"
                        "/opt/local/bin:"
                        (getenv "PATH")))
-(setenv "LANG" "en_US.UTF-8")
+

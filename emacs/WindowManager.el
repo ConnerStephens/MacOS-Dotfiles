@@ -17,6 +17,12 @@
     (better-display-buffer buf)))
 
 
+(defun command-other-frame (command) 
+   (interactive "CRun in new frame: ")
+   (select-frame (new-frame))
+   (call-interactively command))
+
+
 (defun list-and-display-directory (dirname &optional switches)
   "this finds dired listing and displays it in other window without selecting it"
   (interactive (progn (require 'dired)	;; why doesn't autoload work?
@@ -218,16 +224,6 @@ when called with a prefix argument."
     ad-do-it
     (raise-frame f)))
 
-;; Kills Compile buffer after 1 sec if no errors
-(setq compilation-finish-function
-  (lambda (buf str)
-    (if (null (string-match ".*exited abnormally.*" str))
-        ;;no errors, make the compilation window go away in a few seconds
-        (progn
-          (run-at-time
-           "1 sec" nil 'delete-windows-on
-           (get-buffer-create "*compilation*"))
-          (message "No Compilation Errors!")))))
 
 (defun jump-to-existing-buffer (bufname)
   "Jump to buffer BUFNAME.  If visible go there.  Otherwise make it visible
@@ -267,3 +263,6 @@ and go there."
 	(jump-to-existing-buffer shell-buffer-name)
       (shell)
        (rename-buffer (directory-shell-buffer-name) t))))
+
+
+

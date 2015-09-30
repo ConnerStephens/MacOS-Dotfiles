@@ -32,7 +32,7 @@
 
 ;; Meta + Meta
 (define-key conner-prefix-map "\M-a" 'alternate-buffer-in-other-window)
-(define-key conner-prefix-map "\M-b" 'view-buffer-other-frame)
+(define-key conner-prefix-map "\M-b" 'command-other-frame)
 (define-key conner-prefix-map "\M-c" 'make-compile)
 (define-key conner-prefix-map "\M-d" 'delete-other-frames)
 (define-key conner-prefix-map "\M-f" 'find-and-display-file)
@@ -45,6 +45,7 @@
 (define-key conner-prefix-map "\M-z" 'sudo-current-file)
 
 ;; Meta + Ctrl
+(define-key conner-prefix-map "\C-b" 'view-buffer-other-frame)
 (define-key conner-prefix-map "\C-l" 'delete-minibuffer-contents)
 
 ;; Miscellaneous
