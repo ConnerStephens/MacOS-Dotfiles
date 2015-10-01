@@ -30,6 +30,8 @@
 (define-key conner-prefix-map "x" 'comment-region)
 (define-key conner-prefix-map "z" 'sudo-find-file)
 
+;(define-key conner-prefix-map "/" 'toggle-save-place)
+
 ;; Meta + Meta
 (define-key conner-prefix-map "\M-a" 'alternate-buffer-in-other-window)
 (define-key conner-prefix-map "\M-b" 'command-other-frame)
