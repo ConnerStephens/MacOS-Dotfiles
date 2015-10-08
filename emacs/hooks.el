@@ -13,7 +13,8 @@
 	  '(lambda ()
 	     (process-kill-without-query (get-buffer-process (current-buffer)))
 	     ;(ansi-color-for-comint-mode-on)
-             (toggle-truncate-lines 0))) 
+	     (toggle-truncate-lines 0)))
+
 
 
 ;; Sets indents for Python

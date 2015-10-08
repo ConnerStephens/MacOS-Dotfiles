@@ -5,7 +5,6 @@
 ;; - Mode-hooks,	             ;;
 ;; - And various hacks. 	     ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; *** Loads other configs *** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -26,7 +25,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; The good stuff!
-(setq hostname "caerulean") 
+(setq hostname "cyanide") 
 (setq header-user-name "Conner Stephens")
 (setq header-email "fsf291@mocs.utc.edu")
 
@@ -44,13 +43,12 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-;; Eshell stuff
+;; Shell / Eshell stuff
 (setq comint-process-echoes t) ;; stops eshell from repeating commands 
 (ansi-color-for-comint-mode-on) ;; 
 
 ;; Auto save and back-ups
-
-; Turn of backup for sudo files
+;; Turn off backup for sudo files
 (setq backup-enable-predicate
       (lambda (name)
         (and (normal-backup-enable-predicate name)

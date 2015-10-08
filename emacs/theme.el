@@ -3,249 +3,282 @@
 (deftheme my-theme 
   "my-theme for Emacs!")
    
-(let ((my-theme-fg          "#ffffff")
-      (my-theme-bg          "#000000") ;"#403F3F")
-      (my-theme-bg-hi          "#444")
-      (my-theme-fg-hi       "#ffffff")
-
-      (my-theme-grey           "#ccc")
-      (my-theme-grey+1         "#bdbdbd")
-      (my-theme-grey+2         "#cccccc")
-      (my-theme-grey+3         "#8e8e8e")
-      (my-theme-grey-1         "#bbb")
-      (my-theme-grey-2         "#888")
-      (my-theme-grey-3         "#444")
-      (my-theme-grey-4      "#191910") ;"#363636")
-      (my-theme-grey-5      "#8e8e8e")
+;; (let ((foreground    "#ffffff")
+;;       (background    "#000000")
+;;       (background-hi "#444444")
       
-      (my-theme-red         "#FF5050") ;#f22c2c")
+
+;;       (grey           "#ccc")
+;;       (grey+1         "#bdbdbd")
+;;       (grey+2         "#cccccc")
+;;       (grey         "#8e8e8e")
+;;       (grey-1         "#bbb")
+;;       (grey-2         "#888")
+;;       (grey-3         "#444")
+;;       (grey-4      "#191910") ;"#363636")
+;;       (grey-5      "#8e8e8e")
+
+;;       (red          "#FF0000")
+;;       (red2         "#FF5050")
+;;       (red3         "#f22c2c")
      
 
-      (my-theme-orange      "#FFC75F")
-      (my-theme-orange+1    "#EF907E")
-      (my-theme-orange-1    "#AC4123")
-      (my-theme-yellow+1    "#FFFF7F")
-      (my-theme-yellow         "#FB0")
-      (my-theme-yellow-1       "#B90")
+;;       (orange      "#FFC75F")
+;;       (orange+1    "#EF907E")
+;;       (orange-1    "#AC4123")
+;;       (yellow+1    "#FFFF7F")
+;;       (yellow         "#FB0")
+;;       (yellow-1       "#B90")
 
 
-      (my-theme-green       "#a4fdba")
-      (my-theme-green+1     "#aaf5bf")
-      (my-theme-green+2     "#acfcd1")
-      (my-theme-green+3     "#9ae2bc")
-      (my-theme-green+4     "#20e3b7")
+;;       (green       "#a4fdba")
+;;       (green+1     "#aaf5bf")
+;;       (green+2     "#acfcd1")
+;;       (green+3     "#9ae2bc")
+;;       (green+4     "#20e3b7")
 
-      (my-theme-cyan        "#00ffff")
-      (my-theme-cyan+1      "#b9f9f3")
-      (my-theme-cyan+2      "#6ef3fd")
-      (my-theme-cyan+3      "#84b3b6")
-      (my-theme-cyan+4      "#a6e0e4")
-      (my-theme-cyan+5      "#00b7b7")
-      (my-theme-cyan+6      "#007f7f")
+;;       (cyan        "#00ffff")
+;;       (cyan+1      "#b9f9f3")
+;;       (cyan+2      "#6ef3fd")
+;;       (cyan+3      "#84b3b6")
+;;       (cyan+4      "#a6e0e4")
+;;       (cyan+5      "#00b7b7")
+;;       (cyan+6      "#007f7f")
       
-      (my-theme-green+5     "#66a3a3")
-     ; (my-theme-green       "#50d42b")
-      (my-theme-green-1     "#54ab54")
-      (my-theme-green-2     "#0ffe33")
-      (my-theme-green-3     "#00ff11")
-      (my-theme-green-4     "#9aff8e")
+;;       (green+5     "#66a3a3")
+;;      ; -green       "#50d42b")
+;;       (green-1     "#54ab54")
+;;       (green-2     "#0ffe33")
+;;       (green-3     "#00ff11")
+;;       (green-4     "#9aff8e")
 
-   ;   (my-theme-cyan        "#00ffff")
-      (my-theme-cyan-1      "#45e8a5")
+;;    ;   -cyan        "#00ffff")
+;;       (cyan-1      "#45e8a5")
       
-      (my-theme-blue        "#37c4e1")
-      (my-theme-blue+1      "#0080ff")
-      (my-theme-blue+2      "#4dffaa") ;#0099FF")
-      (my-theme-blue+3      "#00ff80")
+      ;; (blue        "#37c4e1")
+      ;; (blue+1      "#0080ff")
+      ;; (blue+2      "#4dffaa") ;#0099FF")
+      ;; (blue+3      "#00ff80")
 
-      (my-theme-magenta     "#99aFfF")
-      (my-theme-purple      "#af88ec"))
+      ;; (magenta     "#99aFfF")
+      ;; (purple      "#af88ec"))
 
+(let ((background         "#000000")
+      (foreground         "#fff") ;"#e2fff7")
+      (grey               "#444444")
+      (grey2              "#7aa")
+      (red                "#ff4040")
+      (orange             "#F38630")
+      (yellow             "#FF9") ;"#FFFF7F")
+      (green              "#45e8a5")
+      (green2             "#41BC93")
+      (green3             "#22FFD3")
+      (blue               "#00ACFF")
+      (blue2              "#008DCA")
+      (cyan               "#00FFFF") 
+      (cyan2              "#018185")
+      (purple             "#baf")
+      (magenta            "#99aFfF"))
   
   (custom-theme-set-faces
    'my-theme
-   `(default ((t (:background ,my-theme-bg :foreground ,my-theme-fg))))
+   `(default ((t (:background, background :foreground, foreground))))
+   
+    ;; font-lock
+   `(font-lock-builtin-face ((t (:foreground ,cyan))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,grey2))))
+   `(font-lock-comment-face ((t (:foreground ,grey2))))
+   `(font-lock-constant-face ((t (:foreground ,blue))))
+   `(font-lock-doc-face ((t (:foreground ,yellow))))
+   `(font-lock-doc-string-face ((t (:foreground ,yellow))))
+   `(font-lock-function-name-face ((t (:foreground ,red))))
+   `(font-lock-keyword-face ((t (:foreground  ,cyan))))
+   `(font-lock-negation-char-face ((t (:foreground ,red))))
+   `(font-lock-operator-face ((t (:foreground ,red))))
+   `(font-lock-number-face ((t (:foreground ,green))))
+   `(font-lock-preprocessor-face ((t (:foreground ,cyan))))
+   `(font-lock-reference-face ((t (:foreground, orange))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground, orange))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground, orange))))
+   `(font-lock-string-face ((t (:foreground, yellow))))
+   `(font-lock-type-face ((t (:foreground, yellow))))
+   `(font-lock-variable-name-face ((t (:foreground, blue))))
+   `(font-lock-warning-face ((t (:foreground, red))))
  
    ;; Editor
-   `(cursor ((t (:background ,my-theme-fg :foreground ,my-theme-bg))))
-   `(highlight ((t (:background ,my-theme-bg-hi :foreground ,my-theme-cyan+1))))
-   `(fringe ((t (:foreground ,my-theme-bg :background ,my-theme-bg))))
-   `(region ((t (:background ,my-theme-bg-hi :foreground ,my-theme-cyan+1))))
-   `(success ((t (:foreground ,my-theme-yellow+1 :weight bold))))
-   `(warning ((t (:foreground ,my-theme-red :weight bold))))
-   `(header-line ((t (:foreground ,my-theme-yellow+1
-                                  :box (:line-width -1 :style released-button)))))
+   `(cursor ((t (:background, foreground :foreground, background))))
+   `(highlight ((t (:background,grey :foreground ,green))))
+   `(fringe ((t (:foreground ,background :background ,background))))
+   `(region ((t (:background ,grey :foreground ,green))))
+   `(success ((t (:foreground ,yellow :weight bold))))
+   `(warning ((t (:foreground ,red :weight bold))))
+   `(header-line ((t (:foreground ,yellow))))
+;                                  :box (:line-width -1 :style released-button)))))
    ;; UI
-   `(menu ((t (:foreground ,my-theme-fg :background ,my-theme-bg))))
-   `(mode-line ((t (:foreground ,my-theme-yellow+1
-                                :background ,my-theme-bg
+   `(menu ((t (:foreground ,foreground :background ,background))))
+   `(mode-line ((t (:foreground ,yellow
+                                :background ,background
                                 :box (:line-width -1 :style pressed-button)))))
-   `(mode-line-inactive ((t (:foreground ,my-theme-grey-2
-                                         :background ,my-theme-bg
+   `(mode-line-inactive ((t (:foreground ,grey
+                                         :background ,background
                                          :box (:line-width -1 :style released-button)))))
-   `(mode-line-buffer-id ((t (:foreground ,my-theme-cyan :weight bold))))
-   `(minibuffer-prompt ((t (:foreground ,my-theme-cyan))))
- 
-   ;; font lock
-   `(font-lock-builtin-face ((t (:foreground ,my-theme-cyan))))
-   `(font-lock-comment-face ((t (:foreground ,my-theme-grey+3))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,my-theme-grey+3))))
-   `(font-lock-constant-face ((t (:foreground ,my-theme-yellow+1))))
-   `(font-lock-doc-string-face ((t (:foreground ,my-theme-fg-hi))))
-   `(font-lock-function-name-face ((t (:foreground ,my-theme-red))))
-   `(font-lock-keyword-face ((t (:foreground ,my-theme-cyan))))
-   `(font-lock-string-face ((t (:foreground ,my-theme-yellow+1))))
-   `(font-lock-type-face ((t (:foreground ,my-theme-yellow+1))))
-   `(font-lock-variable-name-face ((t (:foreground ,my-theme-purple))))   
-   `(font-lock-warning-face ((t (:foreground ,my-theme-red))))
+   `(mode-line-buffer-id ((t (:foreground ,cyan :weight bold))))
+   `(minibuffer-prompt ((t (:foreground ,cyan))))
 
-  ;; linenum mode
-   `(linum ((t (:foreground ,my-theme-cyan+4 :background ,my-theme-grey-4))))
+   ;; linenum mode
+   `(linum ((t (:foreground ,green))))
 
    ;; org-mode
    `(org-agenda-date-today
-     ((t (:foreground ,my-theme-fg :slant italic :weight bold))) t)
+     ((t (:foreground ,foreground :slant italic :weight bold))) t)
+   `(org-agenda-dimmed-todo-face ((t (:foreground ,green))))
+   `(org-agenda-structure
+      ((t (:inherit font-lock-comment-face))))
 
-    `(org-agenda-structure
-     ((t (:inherit font-lock-comment-face))))
-
-   `(org-archived ((t (:foreground ,my-theme-fg :weight bold))))
-   `(org-checkbox ((t (:background ,my-theme-bg :foreground ,my-theme-fg
+   `(org-archived ((t (:foreground ,foreground :weight bold))))
+   `(org-checkbox ((t (:background ,background :foreground ,foreground
                                    :box (:line-width 1 :style released-button)))))
-   `(org-date ((t (:foreground ,my-theme-green+1 :underline t))))
-   `(org-deadline-announce ((t (:foreground ,my-theme-red))))
-   `(org-done ((t (:bold t :weight bold :foreground ,my-theme-green))))
-   `(org-formula ((t (:foreground ,my-theme-yellow))))
 
-   `(org-headline-done ((t (:foreground ,my-theme-green))))
-   `(org-hide ((t (:foreground ,my-theme-bg-hi))))
-   `(org-level-1 ((t (:foreground ,my-theme-cyan))))
-   `(org-level-2 ((t (:foreground ,my-theme-yellow+1))))
-   `(org-level-3 ((t (:foreground ,my-theme-purple))))
-   `(org-level-4 ((t (:foreground ,my-theme-green-2))))
-   `(org-level-5 ((t (:foreground ,my-theme-orange))))
-   `(org-level-6 ((t (:foreground ,my-theme-green+1))))
-   `(org-level-7 ((t (:foreground ,my-theme-magenta))))
-   `(org-level-8 ((t (:foreground ,my-theme-blue+1))))
+   `(org-block ((t (:foreground ,blue))))
+   `(org-date ((t (:foreground ,green :underline t))))
+   `(org-deadline-announce ((t (:foreground ,red))))
+   `(org-done ((t (:bold t :weight bold :foreground ,green))))
+   `(org-formula ((t (:foreground ,yellow))))
 
-   `(org-link ((t (:foreground ,my-theme-blue+2 :underline t))))
-   `(org-scheduled ((t (:foreground ,my-theme-green-2))))
-   `(org-scheduled-previously ((t (:foreground ,my-theme-red))))
-   `(org-scheduled-today ((t (:foreground ,my-theme-blue+1))))
-   `(org-sexp-date ((t (:foreground ,my-theme-blue+1 :underline t))))
+   `(org-headline-done ((t (:foreground ,green))))
+   `(org-hide    ((t (:foreground ,grey))))
+   `(org-level-1 ((t (:foreground ,cyan))))
+   `(org-level-2 ((t (:foreground ,yellow))))
+   `(org-level-3 ((t (:foreground ,purple))))
+   `(org-level-4 ((t (:foreground ,green))))
+   `(org-level-5 ((t (:foreground ,orange))))
+   `(org-level-6 ((t (:foreground ,red))))
+   `(org-level-7 ((t (:foreground ,cyan2))))
+   `(org-level-8 ((t (:foreground ,magenta))))
+
+   `(org-link ((t (:foreground ,blue :underline t))))
+   `(org-scheduled ((t (:foreground ,green))))
+   `(org-scheduled-previously ((t (:foreground ,red))))
+   `(org-scheduled-today ((t (:foreground ,blue))))
+   `(org-sexp-date ((t (:foreground ,blue :underline t))))
    `(org-special-keyword ((t (:inherit font-lock-comment-face))))
 
-   `(org-table ((t (:foreground ,my-theme-yellow+1))))
+   `(org-table ((t (:foreground ,yellow))))
    `(org-tag ((t (:bold t :weight bold))))
-   `(org-time-grid ((t (:foreground ,my-theme-orange))))
-   `(org-todo ((t (:bold t :foreground ,my-theme-red :weight bold))))
+   `(org-time-grid ((t (:foreground ,orange))))
+   `(org-todo ((t (:bold t :foreground ,red :weight bold))))
    `(org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
-   `(org-warning ((t (:bold t :foreground ,my-theme-red :weight bold :underline nil))))
-   `(org-column ((t (:background ,my-theme-bg))))
-   `(org-column-title ((t (:background ,my-theme-bg :underline t :weight bold))))
-   `(org-mode-line-clock ((t (:foreground ,my-theme-fg :background ,my-theme-bg))))
-   `(org-mode-line-clock-overrun ((t (:foreground ,my-theme-bg :background ,my-theme-orange-1))))
-   `(org-ellipsis ((t (:foreground ,my-theme-yellow-1 :underline t))))
-   `(org-footnote ((t (:foreground ,my-theme-cyan :underline t))))
+   `(org-warning ((t (:bold t :foreground ,red :weight bold :underline nil))))
+   `(org-column ((t (:background ,background))))
+   `(org-column-title ((t (:background ,background :underline t :weight bold))))
+   `(org-mode-line-clock ((t (:foreground ,foreground :background ,background))))
+   `(org-mode-line-clock-overrun ((t (:foreground ,background :background ,orange))))
+   
+
+   `(org-ellipsis ((t (:foreground ,yellow :underline t))))
+   `(org-footnote ((t (:foreground ,cyan :underline t))))
    
    ;; outline
-   `(outline-1 ((t (:foreground ,my-theme-red))))
-   `(outline-2 ((t (:foreground ,my-theme-green))))
-   `(outline-3 ((t (:foreground ,my-theme-blue))))
-   `(outline-4 ((t (:foreground ,my-theme-yellow))))
-   `(outline-5 ((t (:foreground ,my-theme-cyan))))
-   `(outline-6 ((t (:foreground ,my-theme-cyan-1))))
-   `(outline-7 ((t (:foreground ,my-theme-red))))
-   `(outline-8 ((t (:foreground ,my-theme-purple))))
+   `(outline-1 ((t (:foreground ,red))))
+   `(outline-2 ((t (:foreground ,green))))
+   `(outline-3 ((t (:foreground ,blue))))
+   `(outline-4 ((t (:foreground ,yellow))))
+   `(outline-5 ((t (:foreground ,cyan))))
+   `(outline-6 ((t (:foreground ,cyan))))
+   `(outline-7 ((t (:foreground ,red))))
+   `(outline-8 ((t (:foreground ,purple))))
    
    ;;ace-jump
    `(ace-jump-face-background
-     ((t (:foreground ,my-theme-fg-hi :background ,my-theme-bg :inverse-video nil))))
+     ((t (:foreground ,foreground :background ,background :inverse-video nil))))
    `(ace-jump-face-foreground
-     ((t (:foreground ,my-theme-green+2 :background ,my-theme-bg :inverse-video nil))))
+     ((t (:foreground ,blue :background ,background :inverse-video nil))))
 
    ;;;;; compilation
-   `(compilation-column-number ((t (:foreground ,my-theme-blue))))
-   `(compilation-error ((t (:bold t :weight bold :foreground, my-theme-red))))
-   `(compilation-warning ((t (:bold t :foreground ,my-theme-orange :weight bold))))
-   `(compilation-warning-face ((t (:bold t :foreground ,my-theme-orange :weight bold))))
+   `(compilation-column-number ((t (:foreground ,blue))))
+   `(compilation-error ((t (:bold t :weight bold :foreground, red))))
+   `(compilation-warning ((t (:bold t :foreground ,orange :weight bold))))
+   `(compilation-warning-face ((t (:bold t :foreground ,orange :weight bold))))
 
-   `(compilation-column-face ((t (:foreground ,my-theme-yellow+1))))
-   `(compilation-enter-directory-face ((t (:foreground ,my-theme-green))))
-   `(compilation-error-face ((t (:foreground ,my-theme-red :weight bold :underline t))))
-   `(compilation-face ((t (:foreground ,my-theme-yellow+1))))
-   `(compilation-info-face ((t (:foreground ,my-theme-blue))))
-   `(compilation-info ((t (:foreground ,my-theme-green-2 :underline t))))
-   `(compilation-leave-directory-face ((t (:foreground ,my-theme-green))))
-   `(compilation-line-face ((t (:foreground ,my-theme-yellow+1))))
-   `(compilation-line-number ((t (:foreground ,my-theme-yellow+1))))
-   `(compilation-message-face ((t (:foreground ,my-theme-blue))))
-   `(compilation-warning-face ((t (:foreground ,my-theme-red :weight bold :underline t))))
-   `(compilation-mode-line-exit ((t (:foreground ,my-theme-green-2 :weight bold))))
-   `(compilation-mode-line-fail ((t (:foreground ,my-theme-red :weight bold))))
-   `(compilation-mode-line-run ((t (:foreground ,my-theme-yellow+1 :weight bold))))
+   `(compilation-column-face ((t (:foreground ,yellow))))
+   `(compilation-enter-directory-face ((t (:foreground ,green))))
+   `(compilation-error-face ((t (:foreground ,red :weight bold :underline t))))
+   `(compilation-face ((t (:foreground ,yellow))))
+   `(compilation-info-face ((t (:foreground ,blue))))
+   `(compilation-info ((t (:foreground ,green :underline t))))
+   `(compilation-leave-directory-face ((t (:foreground ,green))))
+   `(compilation-line-face ((t (:foreground ,yellow))))
+   `(compilation-line-number ((t (:foreground ,yellow))))
+   `(compilation-message-face ((t (:foreground ,blue))))
+   `(compilation-warning-face ((t (:foreground ,red :weight bold :underline t))))
+   `(compilation-mode-line-exit ((t (:foreground ,green :weight bold))))
+   `(compilation-mode-line-fail ((t (:foreground ,red :weight bold))))
+   `(compilation-mode-line-run ((t (:foreground ,yellow :weight bold))))
    ;;; grep
-   `(grep-error-face ((t (:foreground ,my-theme-red :weight bold :underline t))))
+   `(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
 
    ;; eshell
-   `(eshell-prompt ((t (:foreground ,my-theme-cyan :weight bold))))
-   `(eshell-ls-archive ((t (:foreground ,my-theme-red :weight bold))))
-   `(eshell-ls-backup ((t (:inherit font-lock-yellow+1))))
-   `(eshell-ls-clutter ((t (:inherit font-lock-yellow+1))))
-   `(eshell-ls-directory ((t (:foreground ,my-theme-blue+1 :weight bold))))
-   `(eshell-ls-executable ((t (:foreground ,my-theme-red :weight bold))))
-   `(eshell-ls-unreadable ((t (:foreground ,my-theme-fg))))
+   `(eshell-prompt ((t (:foreground ,cyan :weight bold))))
+   `(eshell-ls-archive ((t (:foreground ,red :weight bold))))
+   `(eshell-ls-backup ((t (:inherit font-lock-yellow))))
+   `(eshell-ls-clutter ((t (:inherit font-lock-yellow))))
+   `(eshell-ls-directory ((t (:foreground ,blue :weight bold))))
+   `(eshell-ls-executable ((t (:foreground ,red :weight bold))))
+   `(eshell-ls-unreadable ((t (:foreground ,foreground))))
    `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
    `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
-   `(eshell-ls-special ((t (:foreground ,my-theme-yellow+1 :weight bold))))
-   `(eshell-ls-symlink ((t (:foreground ,my-theme-blue+1 :weight bold))))
+   `(eshell-ls-special ((t (:foreground ,yellow :weight bold))))
+   `(eshell-ls-symlink ((t (:foreground ,blue :weight bold))))
 
    ;; erc
-   `(erc-action-face ((t (:inherit my-theme-green+2))))
+   `(erc-action-face ((t (:inherit green))))
    `(erc-bold-face ((t (:weight bold))))
-   `(erc-current-nick-face ((t (:foreground ,my-theme-cyan :weight bold))))
+   `(erc-current-nick-face ((t (:foreground ,cyan :weight bold))))
    `(erc-dangerous-host-face ((t (:inherit font-lock-warning-face))))
-   `(erc-default-face ((t (:foreground ,my-theme-purple))))
+   `(erc-default-face ((t (:foreground ,purple))))
    `(erc-direct-msg-face ((t (:inherit erc-default))))
    `(erc-error-face ((t (:inherit font-lock-warning-face))))
-   `(erc-fool-face ((t (:inherit my-theme-cyan+3))))
+   `(erc-fool-face ((t (:inherit green))))
    `(erc-highlight-face ((t (:inherit hover-highlight))))
-   `(erc-input-face ((t (:foreground ,my-theme-yellow+1))))
-   `(erc-keyword-face ((t (:foreground ,my-theme-red :weight bold))))
-   `(erc-nick-default-face ((t (:foreground ,my-theme-cyan :weight bold))))
-   `(erc-my-nick-face ((t (:foreground ,my-theme-cyan :weight bold))))
-   `(erc-nick-msg-face ((t (:inherit my-theme-cyan))))
-   `(erc-notice-face ((t (:foreground ,my-theme-grey+3))))
-   `(erc-pal-face ((t (:foreground ,my-theme-orange :weight bold))))
-   `(erc-prompt-face ((t (:foreground ,my-theme-cyan :background ,my-theme-bg :weight bold))))
-   `(erc-timestamp-face ((t (:foreground ,my-theme-grey+3))))
+   `(erc-input-face ((t (:foreground ,yellow))))
+   `(erc-keyword-face ((t (:foreground ,red :weight bold))))
+   `(erc-nick-default-face ((t (:foreground ,cyan :weight bold))))
+   `(erc-my-nick-face ((t (:foreground ,cyan :weight bold))))
+   `(erc-nick-msg-face ((t (:inherit cyan))))
+   `(erc-notice-face ((t (:foreground ,grey))))
+   `(erc-pal-face ((t (:foreground ,orange :weight bold))))
+   `(erc-prompt-face ((t (:foreground ,cyan :background ,background :weight bold))))
+   `(erc-timestamp-face ((t (:foreground ,grey))))
    `(erc-underline-face ((t (:underline t))))
 
-   ;; ido-mode
-   `(ido-first-match ((t (:foreground ,my-theme-fg :weight bold))))
-   `(ido-only-match ((t (:foreground ,my-theme-green :weight bold))))
-   `(ido-subdir ((t (:foreground ,my-theme-grey+3))))
-   `(ido-indicator ((t (:foreground ,my-theme-cyan :background ,my-theme-grey+3))))
+ ;; ido-mode
+   `(ido-first-match ((t (:foreground ,yellow :weight bold))))
+   `(ido-only-match ((t (:foreground ,green :weight bold))))
+   `(ido-subdir ((t (:foreground ,red))))
+   `(ido-indicator ((t (:foreground ,cyan :background ,yellow))))
  ;; term
-   `(term ((t ( :foreground ,my-theme-cyan))))
+   `(term ((t ( :foreground ,cyan))))
 
-   `(term-color-black ((t (:foreground ,my-theme-bg
-                                       :background ,my-theme-bg))))
-   `(term-color-red ((t (:foreground ,my-theme-purple
-                                       :background ,my-theme-purple))))
-   `(term-color-green ((t (:foreground ,my-theme-cyan+6
-                                       :background ,my-theme-cyan+6))))
-   `(term-color-yellow ((t (:foreground ,my-theme-red
-                                       :background ,my-theme-red))))
-   `(term-color-blue ((t (:foreground ,my-theme-yellow+1
-                                      :background ,my-theme-yellow+1))))
-   `(term-color-magenta ((t (:foreground ,my-theme-purple
-                                         :background ,my-theme-purple))))
-   `(term-color-cyan ((t (:foreground ,my-theme-grey+3
-                                       :background ,my-theme-grey+3))))
-   `(term-color-white ((t (:foreground ,my-theme-fg-hi
-                                       :background ,my-theme-fg-hi)))) 
-   ))
+   `(term-color-black ((t (:foreground ,background
+                                       :background ,background))))
+   `(term-color-red ((t (:foreground ,purple
+                                       :background ,purple))))
+   `(term-color-green ((t (:foreground ,cyan2
+                                       :background ,green))))
+   `(term-color-yellow ((t (:foreground ,red
+                                       :background ,red))))
+   `(term-color-blue ((t (:foreground ,yellow
+                                      :background ,yellow))))
+   `(term-color-magenta ((t (:foreground ,purple
+                                         :background ,purple))))
+   `(term-color-cyan ((t (:foreground ,grey
+                                       :background ,blue))))
+   `(term-color-white ((t (:foreground ,foreground
+                                       :background ,foreground)))) 
+
+(font-lock-add-keywords 'c-mode
+			'(("\\(~^&\|!<>:=,.\\+*/%-]\\)" t 'highlight)))
+))
 ;; Change Ansi Colors.
    (setq ansi-color-names-vector
 	 ["#000000" "#FF5050" "#4dffaa" "#af88ec"
