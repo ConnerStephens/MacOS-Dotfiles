@@ -8,35 +8,33 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; *** Loads other configs *** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (add-hook 'after-init-hook
-	  '(lambda()
-		 (load "~/.emacs.d/WindowManager.el")
-		 (load "~/.emacs.d/key-mappings.el")
-		 (load "~/.emacs.d/my-packages.el")
-		 (load "~/.emacs.d/func.el")
-		 (load "~/.emacs.d/mac.el")
-		 (load "~/.emacs.d/hooks.el")
-		 (load "~/.emacs.d/orgConfig.el")))
+	  '(lambda() 
+	     (load "~/.emacs.d/packmode.el")
+	     (load "~/.emacs.d/functions.el")
+	     (load "~/.emacs.d/mac.el")))
 
 (setq custom-enabled-themes (load-file "~/.emacs.d/theme.el"))
-	       
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; *****  Personal Settings ***** ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; The good stuff!
-(setq hostname "cyanide") 
+(setq hostname "moonbase7") 
 (setq header-user-name "Conner Stephens")
 (setq header-email "fsf291@mocs.utc.edu")
+(setq erc-nick "cyanide7")
 
 ;; Sets Default Window Size!
 (setq initial-frame-alist '((width . 86) (height . 55)))
 
 (ido-mode 1)
 (show-paren-mode 1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
 (transient-mark-mode 0)
 
 ;; Enables kbd for making upper/lower case
@@ -45,7 +43,8 @@
 
 ;; Shell / Eshell stuff
 (setq comint-process-echoes t) ;; stops eshell from repeating commands 
-(ansi-color-for-comint-mode-on) ;; 
+(ansi-color-for-comint-mode-on) ;;
+(global-font-lock-mode t)
 
 ;; Auto save and back-ups
 ;; Turn off backup for sudo files
@@ -70,12 +69,10 @@
 ; Backups for tramp
 (setq tramp-backup-directory-alist backup-directory-alist)
 
-
 ;;Disables Start-up Junk
 (setq inhibit-startup-meassge t)
 (setq inhibit-splash-screen t)
 (setq initial-scratch-message nil)
-
 
 ;; Kills Compile buffer after 1 sec if no errors
 (setq compilation-finish-function
@@ -107,3 +104,56 @@
                        "/opt/local/bin:"
                        (getenv "PATH")))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ******* Key Mappings ******* ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Conner-Mode Key Prefs!
+
+(define-prefix-command 'conner-prefix 'conner-prefix-map)
+(define-key global-map "\M-o" 'conner-prefix)
+
+;; Meta + single char
+(define-key conner-prefix-map "a" 'alternate-buffer)
+(define-key conner-prefix-map "b" 'switch-to-buffer-other-frame)
+(define-key conner-prefix-map "c" 'compile)
+(define-key conner-prefix-map "d" 'delete-frame)
+(define-key conner-prefix-map "e" 'eval-buffer)
+(define-key conner-prefix-map "f" 'find-file-other-frame)
+(define-key conner-prefix-map "g"  'hippie-expand)
+(define-key conner-prefix-map "h" 'split-window-vertically)
+(define-key conner-prefix-map "i" 'indent-region)
+(define-key conner-prefix-map "j" 'ace-jump-line-mode)
+(define-key conner-prefix-map "k" 'kill-other-buffer)
+(define-key conner-prefix-map "l" 'ace-jump-mode)
+(define-key conner-prefix-map "p" 'flip-windows)
+(define-key conner-prefix-map "q" 'browse-kill-ring)
+(define-key conner-prefix-map "r" 'find-file-read-only-other-frame)
+(define-key conner-prefix-map "s" 'shell-current-directory)
+(define-key conner-prefix-map "t" 'join-line)
+(define-key conner-prefix-map "u" 'revert-buffer)
+(define-key conner-prefix-map "v" 'split-window-horizontally)
+(define-key conner-prefix-map "w" 'switch-to-buffer-other-window)
+(define-key conner-prefix-map "x" 'comment-region)
+(define-key conner-prefix-map "z" 'sudo-find-file)
+
+;(define-key conner-prefix-map "/" 'toggle-save-place)
+
+;; Meta + Meta
+(define-key conner-prefix-map "\M-a" 'alternate-buffer-in-other-window)
+(define-key conner-prefix-map "\M-b" 'command-other-frame)
+(define-key conner-prefix-map "\M-c" 'make-compile)
+(define-key conner-prefix-map "\M-d" 'delete-other-frames)
+(define-key conner-prefix-map "\M-f" 'find-and-display-file)
+(define-key conner-prefix-map "\M-k" 'kill-current-buffer)
+(define-key conner-prefix-map "\M-s" 'sink-buffer)
+(define-key conner-prefix-map "\M-x" 'uncomment-region)
+(define-key conner-prefix-map "\M-z" 'sudo-current-file)
+
+;; Meta + Ctrl
+(define-key conner-prefix-map "\C-b" 'view-buffer-other-frame)
+(define-key conner-prefix-map "\C-l" 'delete-minibuffer-contents)
+
+;; Miscellaneous
+(global-set-key (kbd "M-DEL") 'backward-kill-line)
+(global-set-key (kbd "M-`") 'other-frame)

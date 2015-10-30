@@ -1,4 +1,4 @@
-export PS1="Caerulean \w: "
+export PS1="Cyanide \w: "
 export TERM=ansi
 export CLICOLOR=1
 #export LSCOLORS=Exfxcxdxbxegedabagacad

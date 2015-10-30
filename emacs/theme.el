@@ -2,66 +2,6 @@
 
 (deftheme my-theme 
   "my-theme for Emacs!")
-   
-;; (let ((foreground    "#ffffff")
-;;       (background    "#000000")
-;;       (background-hi "#444444")
-      
-
-;;       (grey           "#ccc")
-;;       (grey+1         "#bdbdbd")
-;;       (grey+2         "#cccccc")
-;;       (grey         "#8e8e8e")
-;;       (grey-1         "#bbb")
-;;       (grey-2         "#888")
-;;       (grey-3         "#444")
-;;       (grey-4      "#191910") ;"#363636")
-;;       (grey-5      "#8e8e8e")
-
-;;       (red          "#FF0000")
-;;       (red2         "#FF5050")
-;;       (red3         "#f22c2c")
-     
-
-;;       (orange      "#FFC75F")
-;;       (orange+1    "#EF907E")
-;;       (orange-1    "#AC4123")
-;;       (yellow+1    "#FFFF7F")
-;;       (yellow         "#FB0")
-;;       (yellow-1       "#B90")
-
-
-;;       (green       "#a4fdba")
-;;       (green+1     "#aaf5bf")
-;;       (green+2     "#acfcd1")
-;;       (green+3     "#9ae2bc")
-;;       (green+4     "#20e3b7")
-
-;;       (cyan        "#00ffff")
-;;       (cyan+1      "#b9f9f3")
-;;       (cyan+2      "#6ef3fd")
-;;       (cyan+3      "#84b3b6")
-;;       (cyan+4      "#a6e0e4")
-;;       (cyan+5      "#00b7b7")
-;;       (cyan+6      "#007f7f")
-      
-;;       (green+5     "#66a3a3")
-;;      ; -green       "#50d42b")
-;;       (green-1     "#54ab54")
-;;       (green-2     "#0ffe33")
-;;       (green-3     "#00ff11")
-;;       (green-4     "#9aff8e")
-
-;;    ;   -cyan        "#00ffff")
-;;       (cyan-1      "#45e8a5")
-      
-      ;; (blue        "#37c4e1")
-      ;; (blue+1      "#0080ff")
-      ;; (blue+2      "#4dffaa") ;#0099FF")
-      ;; (blue+3      "#00ff80")
-
-      ;; (magenta     "#99aFfF")
-      ;; (purple      "#af88ec"))
 
 (let ((background         "#000000")
       (foreground         "#fff") ;"#e2fff7")
@@ -235,7 +175,7 @@
    `(erc-bold-face ((t (:weight bold))))
    `(erc-current-nick-face ((t (:foreground ,cyan :weight bold))))
    `(erc-dangerous-host-face ((t (:inherit font-lock-warning-face))))
-   `(erc-default-face ((t (:foreground ,purple))))
+   `(erc-default-face ((t (:foreground ,blue))))
    `(erc-direct-msg-face ((t (:inherit erc-default))))
    `(erc-error-face ((t (:inherit font-lock-warning-face))))
    `(erc-fool-face ((t (:inherit green))))
@@ -245,7 +185,7 @@
    `(erc-nick-default-face ((t (:foreground ,cyan :weight bold))))
    `(erc-my-nick-face ((t (:foreground ,cyan :weight bold))))
    `(erc-nick-msg-face ((t (:inherit cyan))))
-   `(erc-notice-face ((t (:foreground ,grey))))
+   `(erc-notice-face ((t (:foreground ,red))))
    `(erc-pal-face ((t (:foreground ,orange :weight bold))))
    `(erc-prompt-face ((t (:foreground ,cyan :background ,background :weight bold))))
    `(erc-timestamp-face ((t (:foreground ,grey))))
@@ -256,6 +196,7 @@
    `(ido-only-match ((t (:foreground ,green :weight bold))))
    `(ido-subdir ((t (:foreground ,red))))
    `(ido-indicator ((t (:foreground ,cyan :background ,yellow))))
+   
  ;; term
    `(term ((t ( :foreground ,cyan))))
 
@@ -270,14 +211,12 @@
    `(term-color-blue ((t (:foreground ,yellow
                                       :background ,yellow))))
    `(term-color-magenta ((t (:foreground ,purple
-                                         :background ,purple))))
+                                        :background ,purple))))
    `(term-color-cyan ((t (:foreground ,grey
                                        :background ,blue))))
    `(term-color-white ((t (:foreground ,foreground
                                        :background ,foreground)))) 
 
-(font-lock-add-keywords 'c-mode
-			'(("\\(~^&\|!<>:=,.\\+*/%-]\\)" t 'highlight)))
 ))
 ;; Change Ansi Colors.
    (setq ansi-color-names-vector
