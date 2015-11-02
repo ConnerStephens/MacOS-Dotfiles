@@ -236,7 +236,7 @@ function reloadConfig(files)
    end
 end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Welcome back, \nCAPTAIN. \n\n All Systems:\n ONLINE.")
+hs.alert.show("Welcome back: \nCommander \n\n All Systems:\n ONLINE")
 
 ------------------------
 -- -- Key Bindings -- --

@@ -29,6 +29,7 @@
 
 ;; Sets Default Window Size!
 (setq initial-frame-alist '((width . 86) (height . 55)))
+(setq ring-bell-function 'ignore)
 
 (ido-mode 1)
 (show-paren-mode 1)
@@ -137,7 +138,9 @@
 (define-key conner-prefix-map "x" 'comment-region)
 (define-key conner-prefix-map "z" 'sudo-find-file)
 
-;(define-key conner-prefix-map "/" 'toggle-save-place)
+(define-key conner-prefix-map "1" 'make-osx-nasm-compile)
+(define-key conner-prefix-map "2" 'make-linux-nasm-compile)
+(define-key conner-prefix-map "3" 'make-win-nasm-compile)
 
 ;; Meta + Meta
 (define-key conner-prefix-map "\M-a" 'alternate-buffer-in-other-window)
@@ -145,7 +148,8 @@
 (define-key conner-prefix-map "\M-c" 'make-compile)
 (define-key conner-prefix-map "\M-d" 'delete-other-frames)
 (define-key conner-prefix-map "\M-f" 'find-and-display-file)
-(define-key conner-prefix-map "\M-k" 'kill-current-buffer)
+;;(define-key conner-prefix-map "\M-k" 'kill-current-buffer)
+(define-key conner-prefix-map "\M-k" 'kill-buffer-and-window)
 (define-key conner-prefix-map "\M-s" 'sink-buffer)
 (define-key conner-prefix-map "\M-x" 'uncomment-region)
 (define-key conner-prefix-map "\M-z" 'sudo-current-file)
