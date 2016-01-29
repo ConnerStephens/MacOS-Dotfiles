@@ -6,6 +6,7 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 
+
 ;; Hotkey Changes
 (global-set-key "\M-H" 'ns-do-hide-emacs)
 

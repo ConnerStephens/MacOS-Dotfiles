@@ -8,7 +8,7 @@
       (grey               "#444444")
       (grey2              "#7aa")
       (red                "#ff4040")
-      (orange             "#F38630")
+      (orange            "#45e8a5") ; "#F38630")
       (yellow             "#FF9") ;"#FFFF7F")
       (green              "#45e8a5")
       (green2             "#41BC93")
@@ -24,7 +24,7 @@
    'my-theme
    `(default ((t (:background, background :foreground, foreground))))
    
-    ;; font-lock
+   ;; font-lock
    `(font-lock-builtin-face ((t (:foreground ,cyan))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,grey2))))
    `(font-lock-comment-face ((t (:foreground ,grey2))))
@@ -38,13 +38,13 @@
    `(font-lock-number-face ((t (:foreground ,green))))
    `(font-lock-preprocessor-face ((t (:foreground ,cyan))))
    `(font-lock-reference-face ((t (:foreground, orange))))
-   `(font-lock-regexp-grouping-backslash ((t (:foreground, orange))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground, orange))))
+   `(font-lock-regexp-grouping-backslash ((t (:foreground, green))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground, green))))
    `(font-lock-string-face ((t (:foreground, yellow))))
    `(font-lock-type-face ((t (:foreground, yellow))))
    `(font-lock-variable-name-face ((t (:foreground, blue))))
    `(font-lock-warning-face ((t (:foreground, red))))
- 
+   
    ;; Editor
    `(cursor ((t (:background, foreground :foreground, background))))
    `(highlight ((t (:background,grey :foreground ,green))))
@@ -53,7 +53,7 @@
    `(success ((t (:foreground ,yellow :weight bold))))
    `(warning ((t (:foreground ,red :weight bold))))
    `(header-line ((t (:foreground ,yellow))))
-;                                  :box (:line-width -1 :style released-button)))))
+					;                                  :box (:line-width -1 :style released-button)))))
    ;; UI
    `(menu ((t (:foreground ,foreground :background ,background))))
    `(mode-line ((t (:foreground ,yellow
@@ -73,7 +73,7 @@
      ((t (:foreground ,foreground :slant italic :weight bold))) t)
    `(org-agenda-dimmed-todo-face ((t (:foreground ,green))))
    `(org-agenda-structure
-      ((t (:inherit font-lock-comment-face))))
+     ((t (:inherit font-lock-comment-face))))
 
    `(org-archived ((t (:foreground ,foreground :weight bold))))
    `(org-checkbox ((t (:background ,background :foreground ,foreground
@@ -191,37 +191,63 @@
    `(erc-timestamp-face ((t (:foreground ,grey))))
    `(erc-underline-face ((t (:underline t))))
 
- ;; ido-mode
+   ;; ido-mode
    `(ido-first-match ((t (:foreground ,yellow :weight bold))))
    `(ido-only-match ((t (:foreground ,green :weight bold))))
    `(ido-subdir ((t (:foreground ,red))))
    `(ido-indicator ((t (:foreground ,cyan :background ,yellow))))
    
- ;; term
+   ;; term
    `(term ((t ( :foreground ,cyan))))
 
    `(term-color-black ((t (:foreground ,background
                                        :background ,background))))
    `(term-color-red ((t (:foreground ,purple
-                                       :background ,purple))))
+				     :background ,purple))))
    `(term-color-green ((t (:foreground ,cyan2
                                        :background ,green))))
    `(term-color-yellow ((t (:foreground ,red
-                                       :background ,red))))
+					:background ,red))))
    `(term-color-blue ((t (:foreground ,yellow
                                       :background ,yellow))))
    `(term-color-magenta ((t (:foreground ,purple
-                                        :background ,purple))))
+					 :background ,purple))))
    `(term-color-cyan ((t (:foreground ,grey
-                                       :background ,blue))))
+				      :background ,blue))))
    `(term-color-white ((t (:foreground ,foreground
                                        :background ,foreground)))) 
-
-))
+   ;; Company-Mode
+   `(company-echo-common ((t (:foreground, cyan))))
+   `(company-preview ((t (:foreground, grey))))
+   `(company-preview-common ((t (:foreground ,blue))))
+   `(company-preview-search ((t (:foreground ,grey))))
+   `(company-scrollbar-bg ((t (:foreground ,yellow :background ,yellow))))
+   `(company-scrollbar-fg ((t (:foreground ,cyan :background ,cyan))))
+   `(company-tooltip ((t (:foreground ,yellow :background ,grey))))
+   `(company-tooltip-annotation ((t (:foreground ,purple))))
+   `(company-tooltip-annotation-selection ((t (:foreground ,purple))))
+   `(company-tooltip-common ((t (:foreground, purple))))
+   `(company-tooltip-common-selection ((t (:foreground, cyan))))
+   `(company-tooltip-search ((t (:foreground, cyan))))
+   ;;   `(company-template-field ((t (:forground ,grey))))
+   `(company-tooltip-selection ((t (:foreground ,yellow))))
+   
+   ;; company-echo 	company-echo-common
+   ;; company-preview 	company-preview-common
+   ;; company-preview-search 	company-scrollbar-bg
+   ;; company-scrollbar-fg 	company-template-field
+   ;; company-tooltip 	company-tooltip-annotation
+   ;; company-tooltip-annotation-selection 	company-tooltip-common
+   ;; company-tooltip-common-selection 	company-tooltip-mouse
+   ;; company-tooltip-search 	company-tooltip-selection
+   ;; completions-annotations 	completions-common-part
+   ;; completions-first-difference
+   
+   ))
 ;; Change Ansi Colors.
-   (setq ansi-color-names-vector
-	 ["#000000" "#FF5050" "#4dffaa" "#af88ec"
-	  "#FFFF7F" "#99aFfF" "#00ffff" "#ffffff"])
+(setq ansi-color-names-vector
+      ["#000000" "#FF5050" "#4dffaa" "#af88ec"
+       "#FFFF7F" "#99aFfF" "#00ffff" "#ffffff"])
 ;; Transparent Windows
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
 (add-to-list 'default-frame-alist '(alpha 85 85))
