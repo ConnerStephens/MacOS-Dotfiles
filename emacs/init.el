@@ -28,7 +28,7 @@
 (setq hostname "moonbase7") 
 (setq header-user-name "Conner Stephens")
 (setq header-email "fsf291@mocs.utc.edu")
-(setq erc-nick "cyanide7")
+(setq erc-nick "OxADD1DEAD")
 
 ;; Sets Default Window Size!
 (setq initial-frame-alist '((width . 86) (height . 55)))
