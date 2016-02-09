@@ -51,6 +51,7 @@
 
 ;; Meta + Ctrl
 (define-key conner-prefix-map "\C-b" 'view-buffer-other-frame)
+(define-key conner-prefix-map "\C-f" 'find-file-other-window)
 (define-key conner-prefix-map "\C-l" 'delete-minibuffer-contents)
 
 

@@ -21,6 +21,7 @@
     company
     exec-path-from-shell
     free-keys
+    gnuplot-mode
     lua-mode
     multiple-cursors
     nasm-mode

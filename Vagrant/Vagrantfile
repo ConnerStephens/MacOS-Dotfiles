@@ -1,0 +1,18 @@
+# Set our default provider for this Vagrantfile to 'vmware_appcatalyst'
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'vmware_appcatalyst'
+ 
+Vagrant.configure('2') do |config|
+ 
+  config.vm.box = "thdengops/ubuntu-14.04-dev"
+#  config.vm.network :forwarded_port, guest: 3000, host: 3000
+  config.ssh.forward_x11 = "true"
+  config.vm.provider 'vmware_appcatalyst' do |v|
+    v.numvcpus = '1'
+    v.memsize = '1024'
+  end
+  config.push.define "heroku" do |push|
+    push.app = "unum-security"
+    push.dir = "unum-security/"
+    push.remote = "heroku"
+  end
+end
