@@ -131,7 +131,7 @@
 
 
 (defun sink-buffer()
-"bury the current buffer, and delete the window!"
+  "bury the current buffer, and delete the window!"
   (interactive)
   (let ((foo (buffer-name)))
     (bury-buffer)
@@ -139,13 +139,15 @@
     (if (not (= (count-windows) 1))
 	(delete-window))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ******* Killing Buffers ******* ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun kill-current-buffer ()
   (interactive)
   (if (buffer-modified-p)
-      ;(error "Can't kill current buffer, buffer modified.")
-    (kill-buffer (current-buffer))))
-
+					;(error "Can't kill current buffer, buffer modified.")
+      (kill-buffer (current-buffer))))
 
 (defun kill-other-buffer ()
   "kill a buffer other than the current one, and stay in current buffer"
@@ -164,7 +166,30 @@
 			  ded-buf)))
 	 real-ded)))))
 
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
+
+(defun close-and-kill-this-pane ()
+  "If there are multiple windows, then close this pane and kill the buffer in it also."
+  (interactive)
+  (kill-this-buffer)
+  (if (not (one-window-p))
+      (delete-window)))
+
+(defun close-and-kill-next-pane ()
+  "If there are multiple windows, then close the other pane and kill the buffer in it also."
+  (interactive)
+  (other-window 1)
+  (kill-this-buffer)
+  (if (not (one-window-p))
+      (delete-window)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ******* Switching Buffers ******* ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun switch-windows-with-buffer (to)
   "switches current buffer position with 'to'.  this doesn't work right if

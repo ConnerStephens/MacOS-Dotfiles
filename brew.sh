@@ -25,7 +25,6 @@ brew install youtube-dl
 brew install gnuplot
 
 brew cask install vmware-fusion
-brew cask install vmware-appcatalyst
 brew cask install vagrant
 brew cask install xquartz
 brew cask install keka

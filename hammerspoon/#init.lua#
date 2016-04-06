@@ -361,3 +361,4 @@ hs.hotkey.bind(amash, 'w', caffeineClicked)
 
 -- hs.hotkey.bind(mash, 'T', function() hs.alert.show(os.date("%A %b %d, %Y - %I:%M%p"), 4) end)
 
+fjkdjfkdjfdjfdfjdfj
