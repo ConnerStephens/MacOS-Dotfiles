@@ -1,3 +1,4 @@
+-- Speed this baby up!
 hs.window.animationDuration = 0
 
 --local tiling = {}
@@ -40,8 +41,8 @@ function reloadConfig(files)
    end
 end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-startUpSound()
-hs.alert.show("All Systems: ONLINE")
+--startUpSound() 
+hs.alert.show("All Systems: ONLINE \n\nBrace For Impact!")
 
 ------------------------------
 -- -- Window Management --  --
@@ -135,6 +136,20 @@ local function rightBottomSlam()
    win:setFrame(f)
 end
 
+local function fullScreen()
+   local win = hs.window.focusedWindow()
+   local f = win:frame()
+   local screen = win:screen()
+   local max = screen:frame()
+
+   f.x = max.x - 2 
+   f.y = max.y 
+   f.w = max.w 
+   f.h = max.h 
+
+   win:setFrame(f)
+end
+
 local function centerfocused(full)
    win = hs.window.focusedWindow()
 
@@ -175,19 +190,6 @@ local function centerWindow(full)
    end
 end
 
-local function fullScreen()
-   local win = hs.window.focusedWindow()
-   local f = win:frame()
-   local screen = win:screen()
-   local max = screen:frame()
-
-   f.x = max.x
-   f.y = max.y
-   f.w = max.w
-   f.h = max.h
-   win:setFrame(f)
-end
-
 -- Toggle an application between being the frontmost app, and being hidden
 hs.hotkey.bind(cmash, 'up', function()
      if hs.window.focusedWindow() then
@@ -196,7 +198,7 @@ hs.hotkey.bind(cmash, 'up', function()
          hs.alert.show("No active window")
      end
 end)
-hs.hotkey.bind(cmash, '.', function()
+hs.hotkey.bind(cmash, 'right', function()
      if hs.window.focusedWindow() then
 	hs.window.focusedWindow():focusWindowEast() 
      else
@@ -210,21 +212,13 @@ hs.hotkey.bind(cmash, 'down', function()
          hs.alert.show("No active window")
      end
  end)
- hs.hotkey.bind(cmash, ',', function()
+ hs.hotkey.bind(cmash, 'left', function()
      if hs.window.focusedWindow() then
          hs.window.focusedWindow():focusWindowWest()
      else
          hs.alert.show("No active window")
      end
  end)
-
-
--------------------
--- -- iTunes --  --
--------------------
--- local function iTunesDisplay()
---    hs.itunes.displayCurrentTrack()
--- end
 
 ----------------
 -- -- Apps -- --
@@ -297,16 +291,17 @@ end
 
 
 
-hs.hotkey.bind(smash, ",", function() leftSlam() end)
-hs.hotkey.bind(smash, ".", function() rightSlam() end)
-
+hs.hotkey.bind(mash, "left", function() leftSlam() end)
+hs.hotkey.bind(mash, "right", function() rightSlam() end)
 hs.hotkey.bind(mash, "return", function() centerWindow() end)
 
 hs.hotkey.bind(tmash, "left", function() leftBottomSlam() end)
 hs.hotkey.bind(tmash, "up", function() leftTopSlam() end)
 hs.hotkey.bind(tmash, "right", function() rightTopSlam() end)
 hs.hotkey.bind(tmash, "down", function() rightBottomSlam() end)
+
 hs.hotkey.bind(tmash, "return", function() centerfocused() end)
+hs.hotkey.bind(mash, "f", function() fullScreen() end)
 
 hs.hotkey.bind(amash, "x", runTerminal)
 hs.hotkey.bind(amash, 'w', caffeineClicked)
