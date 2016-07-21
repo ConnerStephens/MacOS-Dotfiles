@@ -8,11 +8,11 @@
       (grey               "#444444")
       (grey2              "#7aa")
       (red                "#ff4040")
-      (orange            "#45e8a5") ; "#F38630")
-      (yellow             "#FF9") ;"#FFFF7F")
-      (green              "#45e8a5")
-      (green2             "#41BC93")
-      (green3             "#22FFD3")
+      (orange             "#ff8247")
+      (yellow             "#FF9")
+      (green              "#54fa9f")
+      (green2             "#00ff80")
+      (green3             "#00f900")
       (blue               "#00ACFF")
       (blue2              "#008DCA")
       (cyan               "#00FFFF") 
@@ -34,14 +34,14 @@
    `(font-lock-function-name-face ((t (:foreground ,purple))))
    `(font-lock-keyword-face ((t (:foreground  ,cyan))))
    `(font-lock-negation-char-face ((t (:foreground ,red))))
-   `(font-lock-operator-face ((t (:foreground ,red))))
+   `(font-lock-operator-face ((t (:foreground ,yellow))))
    `(font-lock-number-face ((t (:foreground ,green))))
    `(font-lock-preprocessor-face ((t (:foreground ,cyan))))
    `(font-lock-reference-face ((t (:foreground, orange))))
    `(font-lock-regexp-grouping-backslash ((t (:foreground, green))))
    `(font-lock-regexp-grouping-construct ((t (:foreground, green))))
    `(font-lock-string-face ((t (:foreground, yellow))))
-   `(font-lock-type-face ((t (:foreground, yellow))))
+   `(font-lock-type-face ((t (:foreground, green))))
    `(font-lock-variable-name-face ((t (:foreground, blue))))
    `(font-lock-warning-face ((t (:foreground, red))))
    
@@ -64,6 +64,103 @@
 					 :box (:line-width -1 :style released-button)))))
    `(mode-line-buffer-id ((t (:foreground ,cyan :weight bold))))
    `(minibuffer-prompt ((t (:foreground ,cyan))))
+
+   ;;;;;;;;;;;;;;;;;;;;;;;;
+   ;; Modes and whatnot: ;;
+   ;;;;;;;;;;;;;;;;;;;;;;;;
+   
+   ;;ace-jump
+   `(ace-jump-face-background
+     ((t (:foreground ,foreground :background ,background :inverse-video nil))))
+   `(ace-jump-face-foreground
+     ((t (:foreground ,blue :background ,background :inverse-video nil))))
+   
+   ;; Company-Mode
+   `(company-echo-common ((t (:foreground, cyan))))
+   `(company-preview ((t (:foreground, grey))))
+   `(company-preview-common ((t (:foreground ,blue))))
+   `(company-preview-search ((t (:foreground ,grey))))
+   `(company-scrollbar-bg ((t (:foreground ,yellow :background ,yellow))))
+   `(company-scrollbar-fg ((t (:foreground ,cyan :background ,cyan))))
+   `(company-tooltip ((t (:foreground ,yellow :background ,grey))))
+   `(company-tooltip-annotation ((t (:foreground ,purple))))
+   `(company-tooltip-annotation-selection ((t (:foreground ,purple))))
+   `(company-tooltip-common ((t (:foreground, purple))))
+   `(company-tooltip-common-selection ((t (:foreground, cyan))))
+   `(company-tooltip-search ((t (:foreground, cyan))))
+   `(company-tooltip-selection ((t (:foreground ,yellow))))
+   
+   ;;;;; compilation
+   `(compilation-column-number ((t (:foreground ,blue))))
+   `(compilation-error ((t (:bold t :weight bold :foreground, red))))
+   `(compilation-warning ((t (:bold t :foreground ,orange :weight bold))))
+   `(compilation-warning-face ((t (:bold t :foreground ,orange :weight bold))))
+
+   `(compilation-column-face ((t (:foreground ,yellow))))
+   `(compilation-enter-directory-face ((t (:foreground ,green))))
+   `(compilation-error-face ((t (:foreground ,red :weight bold :underline t))))
+   `(compilation-face ((t (:foreground ,yellow))))
+   `(compilation-info-face ((t (:foreground ,blue))))
+   `(compilation-info ((t (:foreground ,green :underline t))))
+   `(compilation-leave-directory-face ((t (:foreground ,green))))
+   `(compilation-line-face ((t (:foreground ,yellow))))
+   `(compilation-line-number ((t (:foreground ,yellow))))
+   `(compilation-message-face ((t (:foreground ,blue))))
+   `(compilation-warning-face ((t (:foreground ,red :weight bold :underline t))))
+   `(compilation-mode-line-exit ((t (:foreground ,green :weight bold))))
+   `(compilation-mode-line-fail ((t (:foreground ,red :weight bold))))
+   `(compilation-mode-line-run ((t (:foreground ,yellow :weight bold))))
+   
+   ;; enh-ruby-mode							 
+   `(enh-ruby-op-face ((t (:foreground ,green))))		 
+   `(enh-ruby-heredoc-delimiter-face ((t (:foreground ,blue))))	 
+   `(enh-ruby-string-delimiter-face ((t (:foreground ,yellow)))) 
+   `(enh-ruby-regexp-delimiter-face ((t (:color ,purple))))
+   `(erm-syn-errline ((t (:color ,red))))			
+   `(erm-syn-warnline ((t (:color ,red))))	
+   
+   ;; erc
+   `(erc-action-face ((t (:inherit green))))
+   `(erc-bold-face ((t (:weight bold))))
+   `(erc-current-nick-face ((t (:foreground ,cyan :weight bold))))
+   `(erc-dangerous-host-face ((t (:inherit font-lock-warning-face))))
+   `(erc-default-face ((t (:foreground ,blue))))
+   `(erc-direct-msg-face ((t (:inherit erc-default))))
+   `(erc-error-face ((t (:inherit font-lock-warning-face))))
+   `(erc-fool-face ((t (:inherit green))))
+   `(erc-highlight-face ((t (:inherit hover-highlight))))
+   `(erc-input-face ((t (:foreground ,yellow))))
+   `(erc-keyword-face ((t (:foreground ,red :weight bold))))
+   `(erc-nick-default-face ((t (:foreground ,cyan :weight bold))))
+   `(erc-my-nick-face ((t (:foreground ,cyan :weight bold))))
+   `(erc-nick-msg-face ((t (:inherit cyan))))
+   `(erc-notice-face ((t (:foreground ,red))))
+   `(erc-pal-face ((t (:foreground ,orange :weight bold))))
+   `(erc-prompt-face ((t (:foreground ,cyan :background ,background :weight bold))))
+   `(erc-timestamp-face ((t (:foreground ,grey))))
+   `(erc-underline-face ((t (:underline t))))
+   
+   ;; eshell
+   `(eshell-prompt ((t (:foreground ,cyan :weight bold))))
+   `(eshell-ls-archive ((t (:foreground ,red :weight bold))))
+   `(eshell-ls-backup ((t (:inherit font-lock-yellow))))
+   `(eshell-ls-clutter ((t (:inherit font-lock-yellow))))
+   `(eshell-ls-directory ((t (:foreground ,blue :weight bold))))
+   `(eshell-ls-executable ((t (:foreground ,red :weight bold))))
+   `(eshell-ls-unreadable ((t (:foreground ,foreground))))
+   `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
+   `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
+   `(eshell-ls-special ((t (:foreground ,yellow :weight bold))))
+   `(eshell-ls-symlink ((t (:foreground ,blue :weight bold))))
+
+   ;; grep
+   `(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
+
+   ;; ido-mode
+   `(ido-first-match ((t (:foreground ,yellow :weight bold))))
+   `(ido-only-match ((t (:foreground ,green :weight bold))))
+   `(ido-subdir ((t (:foreground ,purple))))
+   `(ido-indicator ((t (:foreground ,cyan :background ,yellow))))
 
    ;; linenum mode
    `(linum ((t (:foreground ,green))))
@@ -128,78 +225,8 @@
    `(outline-7 ((t (:foreground ,red))))
    `(outline-8 ((t (:foreground ,purple))))
    
-   ;;ace-jump
-   `(ace-jump-face-background
-     ((t (:foreground ,foreground :background ,background :inverse-video nil))))
-   `(ace-jump-face-foreground
-     ((t (:foreground ,blue :background ,background :inverse-video nil))))
-
-   ;;;;; compilation
-   `(compilation-column-number ((t (:foreground ,blue))))
-   `(compilation-error ((t (:bold t :weight bold :foreground, red))))
-   `(compilation-warning ((t (:bold t :foreground ,orange :weight bold))))
-   `(compilation-warning-face ((t (:bold t :foreground ,orange :weight bold))))
-
-   `(compilation-column-face ((t (:foreground ,yellow))))
-   `(compilation-enter-directory-face ((t (:foreground ,green))))
-   `(compilation-error-face ((t (:foreground ,red :weight bold :underline t))))
-   `(compilation-face ((t (:foreground ,yellow))))
-   `(compilation-info-face ((t (:foreground ,blue))))
-   `(compilation-info ((t (:foreground ,green :underline t))))
-   `(compilation-leave-directory-face ((t (:foreground ,green))))
-   `(compilation-line-face ((t (:foreground ,yellow))))
-   `(compilation-line-number ((t (:foreground ,yellow))))
-   `(compilation-message-face ((t (:foreground ,blue))))
-   `(compilation-warning-face ((t (:foreground ,red :weight bold :underline t))))
-   `(compilation-mode-line-exit ((t (:foreground ,green :weight bold))))
-   `(compilation-mode-line-fail ((t (:foreground ,red :weight bold))))
-   `(compilation-mode-line-run ((t (:foreground ,yellow :weight bold))))
-   ;;; grep
-   `(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
-
-   ;; eshell
-   `(eshell-prompt ((t (:foreground ,cyan :weight bold))))
-   `(eshell-ls-archive ((t (:foreground ,red :weight bold))))
-   `(eshell-ls-backup ((t (:inherit font-lock-yellow))))
-   `(eshell-ls-clutter ((t (:inherit font-lock-yellow))))
-   `(eshell-ls-directory ((t (:foreground ,blue :weight bold))))
-   `(eshell-ls-executable ((t (:foreground ,red :weight bold))))
-   `(eshell-ls-unreadable ((t (:foreground ,foreground))))
-   `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
-   `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
-   `(eshell-ls-special ((t (:foreground ,yellow :weight bold))))
-   `(eshell-ls-symlink ((t (:foreground ,blue :weight bold))))
-
-   ;; erc
-   `(erc-action-face ((t (:inherit green))))
-   `(erc-bold-face ((t (:weight bold))))
-   `(erc-current-nick-face ((t (:foreground ,cyan :weight bold))))
-   `(erc-dangerous-host-face ((t (:inherit font-lock-warning-face))))
-   `(erc-default-face ((t (:foreground ,blue))))
-   `(erc-direct-msg-face ((t (:inherit erc-default))))
-   `(erc-error-face ((t (:inherit font-lock-warning-face))))
-   `(erc-fool-face ((t (:inherit green))))
-   `(erc-highlight-face ((t (:inherit hover-highlight))))
-   `(erc-input-face ((t (:foreground ,yellow))))
-   `(erc-keyword-face ((t (:foreground ,red :weight bold))))
-   `(erc-nick-default-face ((t (:foreground ,cyan :weight bold))))
-   `(erc-my-nick-face ((t (:foreground ,cyan :weight bold))))
-   `(erc-nick-msg-face ((t (:inherit cyan))))
-   `(erc-notice-face ((t (:foreground ,red))))
-   `(erc-pal-face ((t (:foreground ,orange :weight bold))))
-   `(erc-prompt-face ((t (:foreground ,cyan :background ,background :weight bold))))
-   `(erc-timestamp-face ((t (:foreground ,grey))))
-   `(erc-underline-face ((t (:underline t))))
-
-   ;; ido-mode
-   `(ido-first-match ((t (:foreground ,yellow :weight bold))))
-   `(ido-only-match ((t (:foreground ,green :weight bold))))
-   `(ido-subdir ((t (:foreground ,red))))
-   `(ido-indicator ((t (:foreground ,cyan :background ,yellow))))
-   
    ;; term
    `(term ((t ( :foreground ,cyan))))
-
    `(term-color-black ((t (:foreground ,background
 				       :background ,background))))
    `(term-color-red ((t (:foreground ,purple
@@ -215,39 +242,29 @@
    `(term-color-cyan ((t (:foreground ,grey
 				      :background ,blue))))
    `(term-color-white ((t (:foreground ,foreground
-				       :background ,foreground)))) 
-   ;; Company-Mode
-   `(company-echo-common ((t (:foreground, cyan))))
-   `(company-preview ((t (:foreground, grey))))
-   `(company-preview-common ((t (:foreground ,blue))))
-   `(company-preview-search ((t (:foreground ,grey))))
-   `(company-scrollbar-bg ((t (:foreground ,yellow :background ,yellow))))
-   `(company-scrollbar-fg ((t (:foreground ,cyan :background ,cyan))))
-   `(company-tooltip ((t (:foreground ,yellow :background ,grey))))
-   `(company-tooltip-annotation ((t (:foreground ,purple))))
-   `(company-tooltip-annotation-selection ((t (:foreground ,purple))))
-   `(company-tooltip-common ((t (:foreground, purple))))
-   `(company-tooltip-common-selection ((t (:foreground, cyan))))
-   `(company-tooltip-search ((t (:foreground, cyan))))
-   ;;   `(company-template-field ((t (:forground ,grey))))
-   `(company-tooltip-selection ((t (:foreground ,yellow))))
-   
-   ;; company-echo 	company-echo-common
-   ;; company-preview 	company-preview-common
-   ;; company-preview-search 	company-scrollbar-bg
-   ;; company-scrollbar-fg 	company-template-field
-   ;; company-tooltip 	company-tooltip-annotation
-   ;; company-tooltip-annotation-selection 	company-tooltip-common
-   ;; company-tooltip-common-selection 	company-tooltip-mouse
-   ;; company-tooltip-search 	company-tooltip-selection
-   ;; completions-annotations 	completions-common-part
-   ;; completions-first-difference
-   
+				       :background ,foreground))))
    ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Key Words For Modes ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (font-lock-add-keywords 'python-mode
+;; 			'(("[+=-*\]" . font-lock-type-face)
+;; 			  ))
+
+;; Ruby
+(font-lock-add-keywords 'enh-ruby-mode
+			'(("require" . font-lock-keyword-face)
+			  ("set" . font-lock-keyword-face)
+			  ("erb" . font-lock-type-face)
+			  ))
+
 ;; Change Ansi Colors.
 (setq ansi-color-names-vector
       ["#000000" "#FF5050" "#4dffaa" "#af88ec"
        "#FFFF7F" "#99aFfF" "#00ffff" "#ffffff"])
+
 ;; Transparent Windows
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
 (add-to-list 'default-frame-alist '(alpha 85 85))

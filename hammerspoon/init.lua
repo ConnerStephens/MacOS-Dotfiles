@@ -13,18 +13,6 @@ local spaces = {}
 local settings = { layouts = {} }
 local layouts = {}
 
-
--------------------------
--- -- Reload Config -- --
--------------------------
-function startUpSound()
---    hs.applescript._applescript([[
--- tell application "Play Sound" 
---    play "HD:Users:cyanide:.hammerspoon:start.m4a" 
-   -- end tell]])
-   os.execute("afplay start.m4a")
-end
-
 -------------------------
 -- -- Reload Config -- --
 -------------------------
@@ -43,6 +31,19 @@ end
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 --startUpSound() 
 hs.alert.show("All Systems: ONLINE \n\nBrace For Impact!")
+
+
+---------------------------
+-- -- Start Up Sound  -- --
+---------------------------
+
+function startUpSound()
+--    hs.applescript._applescript([[
+-- tell application "Play Sound" 
+--    play "HD:Users:cyanide:.hammerspoon:start.m4a" 
+   -- end tell]])
+   os.execute("afplay start.m4a")
+end
 
 ------------------------------
 -- -- Window Management --  --
@@ -278,17 +279,6 @@ end
 --    hs.alert.show(time.hour)
 -- end  
 
-------------------------
--- -- Key Bindings -- --
-------------------------
-
--- Notes
--- local mash = {"ctrl", "cmd"}
--- local tmash = {"ctrl", "cmd", "shift"}
--- local smash = {"ctrl"}
--- local cmash = {"cmd"}
--- local amash = {"alt", "shift"}
-
 
 
 hs.hotkey.bind(mash, "left", function() leftSlam() end)
@@ -305,54 +295,15 @@ hs.hotkey.bind(mash, "f", function() fullScreen() end)
 
 hs.hotkey.bind(amash, "x", runTerminal)
 hs.hotkey.bind(amash, 'w', caffeineClicked)
--- hs.hotkey.bind(amash, 'q', getTime)
-
------------------------------------------------------------
-
--- local wifiWatcher = nil
--- local homeSSID = "NETGEAR78"
--- local lastSSID = hs.wifi.currentNetwork()
-
--- function ssidChangedCallback()
---     newSSID = hs.wifi.currentNetwork()
-
---     if newSSID == homeSSID and lastSSID ~= homeSSID then
---         -- We just joined our home WiFi network
---         hs.audiodevice.defaultOutputDevice():setVolume(25)
---     elseif newSSID ~= homeSSID and lastSSID == homeSSID then
---         -- We just departed our home WiFi network
---         hs.audiodevice.defaultOutputDevice():setVolume(0)
---     end
-
---     lastSSID = newSSID
--- end
-
--- wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
--- wifiWatcher:start()
-
--- local tiling = require "hs.tiling"
--- local hotkey = require "hs.hotkey"
 
 
--- hotkey.bind(mash, "c", function() tiling.cycleLayout() end)
--- hotkey.bind(mash, "j", function() tiling.cycle(1) end)
--- hotkey.bind(mash, "k", function() tiling.cycle(-1) end)
--- hotkey.bind(mash, "space", function() tiling.promote() end)
--- --hotkey.bind(mash, "f", function() tiling.goToLayout("fullscreen") end)
+------------------------
+-- -- Key Bindings -- --
+------------------------
 
--- -- If you want to set the layouts that are enabled
--- tiling.set('layouts', {
---   'fullscreen', 'main-vertical'
--- })
-
--- -- Set up hotkey combinations
--- local mash      = {"cmd", "alt"}
-
--- hs.hotkey.bind(mash, 'M', hs.grid.maximizeWindow)
-
--- hs.hotkey.bind(mash, 'F', function() hs.window.focusedWindow():toggleFullScreen() end)
-
--- )
-
--- hs.hotkey.bind(mash, 'T', function() hs.alert.show(os.date("%A %b %d, %Y - %I:%M%p"), 4) end)
-
+-- Notes
+-- local mash = {"ctrl", "cmd"}
+-- local tmash = {"ctrl", "cmd", "shift"}
+-- local smash = {"ctrl"}
+-- local cmash = {"cmd"}
+-- local amash = {"alt", "shift"}

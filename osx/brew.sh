@@ -23,6 +23,7 @@ brew install aspell
 brew install ffmpeg
 brew install youtube-dl
 brew install gnuplot
+brew install nasm
 
 brew cask install vmware-fusion
 brew cask install vagrant
@@ -34,5 +35,9 @@ brew cask install alfred
 brew cask install appcleaner
 brew cask install mactex
 brew cask install gimp
+brew cask install transmission
+brew cask install jadengeller-helium
+brew cask install flux
+brew cask install google-chrome
 
 brew cleanup

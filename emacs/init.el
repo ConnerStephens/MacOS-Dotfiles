@@ -16,7 +16,7 @@
 	     (load "~/.emacs.d/functions.el")
 	     (load "~/.emacs.d/intel-mode.el")
 	     (load "~/.emacs.d/key-maps.el")
-	     (load "~/.emacs.d/mac.el")))
+	     (load "~/.emacs.d/osx.el")))
 
 (setq custom-enabled-themes (load-file "~/.emacs.d/theme.el"))
 
@@ -28,14 +28,14 @@
 (setq hostname "moonbase7") 
 (setq header-user-name "Conner Stephens")
 (setq header-email "fsf291@mocs.utc.edu")
-(setq erc-nick "OxADD1DEAD")
+(setq erc-nick "WillCode4Cats")
 
 ;; Sets Default Window Size!
 (setq initial-frame-alist '((width . 86) (height . 55)))
 (setq ring-bell-function 'ignore)
 
 ;; ido-mode
- (setq ido-enable-flex-matching t)
+(setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
 

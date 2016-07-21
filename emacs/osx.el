@@ -4,11 +4,7 @@
 
 ;; Key-map changes
 (setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
-
-
-;; Hotkey Changes
-(global-set-key "\M-H" 'ns-do-hide-emacs)
+(setq mac-option-modifier 'none)
 
 ;; Changes ispell to aspell for OSX
 (setq-default ispell-program-name "aspell")

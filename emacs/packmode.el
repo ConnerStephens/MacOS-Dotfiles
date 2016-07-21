@@ -13,19 +13,22 @@
 
 (defvar required-packages
   '(
-    aggressive-indent
     ace-jump-mode
     ace-jump-buffer
+    aggressive-indent
+    autopair
+    avy
     browse-kill-ring
     buffer-move
     company
+    enh-ruby-mode
     exec-path-from-shell
     free-keys
     gnuplot-mode
+    gnuplot
     lua-mode
     multiple-cursors
     nasm-mode
-    neotree
     nyan-mode
     rainbow-mode 
     org
@@ -72,11 +75,18 @@
 ;;))
 (setq asm-comment-char ?\#)
 
+;; autopair
+(autopair-global-mode)
+
 ;; company-mode
 (global-company-mode t)
 
 ;; multiple-cursors
 (multiple-cursors-mode 1)
+
+;; enh-ruby-mode
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
 
 ;; nasm-mode
@@ -107,6 +117,7 @@
 			   (org-babel-do-load-languages
 			    'org-babel-load-languages
 			    '((emacs-lisp . t)
+			      (gnuplot . t)
 			      (python . t)
 			      (ruby . t)))
 
@@ -125,9 +136,4 @@
 ;; smex-mode
 (autoload 'smex-mode "smex")
 (global-set-key (kbd "M-x") 'smex)
-
-;; Which-Key
-(which-key-mode 1)
-
-
 
