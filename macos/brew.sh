@@ -41,3 +41,9 @@ brew cask install flux
 brew cask install google-chrome
 
 brew cleanup
+
+sudo -s
+echo /usr/local/bin/bash >> /etc/shells
+chsh -s /usr/local/bin/bash
+
+
